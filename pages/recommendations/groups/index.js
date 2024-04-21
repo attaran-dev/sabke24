@@ -19,7 +19,7 @@ export default function GroupRecom(props) {
     );
   }
 
-  export async function getStaticProps() {
+  export async function getServerSideProps() {
     const client = await connectToDatabase();
     const db = client.db()
     const recentPosts = await db.collection('posts').find({recomType: 'group'}).sort({creationDate: -1}).toArray();
@@ -27,8 +27,7 @@ export default function GroupRecom(props) {
         return {
       props: {
         recentPosts: JSON.parse(JSON.stringify(recentPosts)),
-      },
-      revalidate: 1,
+      }
     };
   }
   

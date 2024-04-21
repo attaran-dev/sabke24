@@ -147,7 +147,7 @@ export default function Recom(props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const client = await connectToDatabase();
   const db = client.db();
   const podcastPosts = await db
@@ -182,7 +182,6 @@ export async function getStaticProps() {
       bookPosts: JSON.parse(JSON.stringify(bookPosts)),
       appPosts: JSON.parse(JSON.stringify(appPosts)),
       groupPosts: JSON.parse(JSON.stringify(groupPosts)),
-    },
-    revalidate: 1,
+    }
   };
 }

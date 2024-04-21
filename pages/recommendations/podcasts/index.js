@@ -17,7 +17,7 @@ export default function PodcastRecom(props) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const client = await connectToDatabase();
   const db = client.db();
   const recentPosts = await db
@@ -30,7 +30,6 @@ export async function getStaticProps() {
   return {
     props: {
       recentPosts: JSON.parse(JSON.stringify(recentPosts)),
-    },
-    revalidate: 1,
+    }
   };
 }

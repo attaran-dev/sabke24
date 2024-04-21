@@ -20,7 +20,7 @@ import Head from "next/head";
     );
   }
   
-  export async function getStaticProps() {
+  export async function getServerSideProps() {
     const client = await connectToDatabase();
     const db = client.db()
     const recentPosts = await db.collection('posts').find({recomType: 'book'}).sort({creationDate: -1}).toArray();
@@ -28,8 +28,7 @@ import Head from "next/head";
     return {
       props: {
         recentPosts: JSON.parse(JSON.stringify(recentPosts)),
-      },
-      revalidate: 1,
+      }
     };
   }
   
