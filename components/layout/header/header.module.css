@@ -1,0 +1,17 @@
+.dropdown {
+  position: relative;
+  /* display: inline-block; */
+}
+
+.dropdownmenu {
+  display: none;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdownmenu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
