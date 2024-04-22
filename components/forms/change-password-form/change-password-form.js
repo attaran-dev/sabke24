@@ -20,7 +20,7 @@ export default function ChangePasswordForm() {
       return
   }
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col border-8 p-8 rounded-2xl w-1/3 m-auto gap-4">
+    <form onSubmit={handleSubmit} className="flex flex-col border-8 p-8 rounded-2xl lg:w-1/3 md:w-2/3 m-auto gap-4">
       <label htmlFor="oldPass">رمز عبور قبلی</label>
       <input type="password" id="oldPass" ref={oldPasswordRef} className="border-4 rounded p-2 focus:border-black"/>
       <label htmlFor="newPass">رمز عبور جدید</label>

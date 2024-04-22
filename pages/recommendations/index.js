@@ -42,17 +42,17 @@ export default function Recom(props) {
       <div className="m-auto rounded bg-gray-200 p-1 inline-block">
         <h1>معرفی دیگران</h1>
       </div>
-      <ul className="flex gap-4 justify-center m-8">
+      <ul className="flex flex-col md:flex-row gap-2 m-4 md:gap-4 justify-center md:m-8">
         {bookPosts.length > 0 && (
           <li
-            className="text-center p-4 w-56 flex flex-col gap-4"
+            className="text-center flex flex-col gap-4 items-center"
             id="books"
             onMouseOver={() => setHoveredColumn("books")}
             onMouseOut={() => setHoveredColumn("none")}
           >
             <Link
               href={`/recommendations/books`}
-              className=" rounded bg-gray-50 hover:bg-gray-100 p-1"
+              className="text-sm md:text-base rounded bg-gray-50 hover:bg-gray-100 p-1"
             >
               معرفی کتاب و مقاله
             </Link>
@@ -60,22 +60,23 @@ export default function Recom(props) {
             <RecomContentPosts recomType={"books"} allRecomPosts={bookPosts} />
             <Link
               href={`/recommendations/books`}
-              className=" rounded bg-gray-50 hover:bg-gray-100 p-1"
+              className="text-sm md:text-base rounded bg-gray-50 hover:bg-gray-100 p-1"
             >
               نمایش همه
             </Link>
+            <div className="border w-2/3"></div>
           </li>
         )}
         {podcastPosts.length > 0 && (
           <li
-            className="text-center p-4 w-56 flex flex-col gap-4"
+            className="text-center flex flex-col gap-4 items-center"
             id="podcasts"
             onMouseOver={() => setHoveredColumn("podcasts")}
             onMouseOut={() => setHoveredColumn("none")}
           >
             <Link
               href={`/recommendations/podcasts`}
-              className=" rounded bg-gray-50 hover:bg-gray-100 p-1"
+              className="text-sm md:text-base rounded bg-gray-50 hover:bg-gray-100 p-1"
             >
               معرفی پادکست
             </Link>
@@ -86,22 +87,23 @@ export default function Recom(props) {
             />
             <Link
               href={`/recommendations/podcasts`}
-              className=" rounded bg-gray-50 hover:bg-gray-100 p-1"
+              className="text-sm md:text-base rounded bg-gray-50 hover:bg-gray-100 p-1"
             >
               نمایش همه
             </Link>
+            <div className="border w-2/3"></div>
           </li>
         )}
         {appPosts.length > 0 && (
           <li
-            className="text-center p-4 w-56 flex flex-col gap-4"
+            className="text-center flex flex-col gap-4 items-center"
             id="apps"
             onMouseOver={() => setHoveredColumn("apps")}
             onMouseOut={() => setHoveredColumn("none")}
           >
             <Link
               href={`/recommendations/apps`}
-              className=" rounded bg-gray-50 hover:bg-gray-100 p-1"
+              className="text-sm md:text-base rounded bg-gray-50 hover:bg-gray-100 p-1"
             >
               معرفی اپلیکیشن و سایت
             </Link>
@@ -109,22 +111,23 @@ export default function Recom(props) {
             <RecomContentPosts recomType={"apps"} allRecomPosts={appPosts} />
             <Link
               href={`/recommendations/apps`}
-              className=" rounded bg-gray-50 hover:bg-gray-100 p-1"
+              className="text-sm md:text-base rounded bg-gray-50 hover:bg-gray-100 p-1"
             >
               نمایش همه
             </Link>
+            <div className="border w-2/3"></div>
           </li>
         )}
         {groupPosts.length > 0 && (
           <li
-            className="text-center p-4 w-56 flex flex-col gap-4"
+            className="text-center flex flex-col gap-4 items-center"
             id="groups"
             onMouseOver={() => setHoveredColumn("groups")}
             onMouseOut={() => setHoveredColumn("none")}
           >
             <Link
               href={`/recommendations/groups`}
-              className=" rounded bg-gray-50 hover:bg-gray-100 p-1"
+              className="text-sm md:text-base rounded bg-gray-50 hover:bg-gray-100 p-1"
             >
               معرفی گروه
             </Link>
@@ -135,14 +138,17 @@ export default function Recom(props) {
             />
             <Link
               href={`/recommendations/groups`}
-              className=" rounded bg-gray-50 hover:bg-gray-100 p-1"
+              className="text-sm md:text-base rounded bg-gray-50 hover:bg-gray-100 p-1"
             >
               نمایش همه
             </Link>
+            <div className="border w-2/3"></div>
           </li>
         )}
       </ul>
-      <RecomElement recomType={hoveredColumn} />
+      <div className="hidden md:block">
+        <RecomElement recomType={hoveredColumn} />
+      </div>
     </div>
   );
 }
@@ -182,6 +188,6 @@ export async function getServerSideProps() {
       bookPosts: JSON.parse(JSON.stringify(bookPosts)),
       appPosts: JSON.parse(JSON.stringify(appPosts)),
       groupPosts: JSON.parse(JSON.stringify(groupPosts)),
-    }
+    },
   };
 }

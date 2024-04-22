@@ -20,23 +20,23 @@ export default function Dashboard() {
           <div className="m-auto rounded bg-gray-200 p-1 inline-block">
             <h1>داشبورد</h1>
           </div>
-          <div className="flex flex-col items-center justify-center gap-6">
-            <div className="flex flex-row gap-4">
+          <div className="flex flex-col items-center justify-center gap-6 m-2">
+            <div className="flex flex-row gap-2 ">
               <Link
                 href={`/dashboard/pages`}
-                className="rounded bg-gray-100 hover:bg-gray-200 p-1"
+                className="text-center rounded bg-gray-100 hover:bg-gray-200 p-1"
               >
                 مدیریت صفحات
               </Link>
               <Link
                 href={`/dashboard/posts`}
-                className="rounded bg-gray-100 hover:bg-gray-200 p-1"
+                className="text-center rounded bg-gray-100 hover:bg-gray-200 p-1"
               >
                 مدیریت پست‌ها
               </Link>
               <Link
                 href={`/dashboard/change-password`}
-                className="rounded bg-gray-100 hover:bg-gray-200 p-1"
+                className="text-center rounded bg-gray-100 hover:bg-gray-200 p-1"
               >
                 تغییر رمز عبور
               </Link>

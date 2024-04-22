@@ -97,7 +97,7 @@ export default function CreatePostForm(props) {
   }
 
   return (
-    <div className="absolute mt-12 inset-x-1/4">
+    <div className="absolute top-24 m-auto inset-x-1/12 md:top-32 md:inset-x-1/4 p-2 md:p-8">
       <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
         <div className="m-auto rounded bg-gray-200 p-1 inline-block">
           <h1>فرم ایجاد مطلب جدید</h1>

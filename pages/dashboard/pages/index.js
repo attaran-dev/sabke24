@@ -64,9 +64,9 @@ export default function PagesList(props) {
       {pagesContentsByType && (
         <div className="mt-12 flex flex-col items-center gap-8">
           <div className="rounded p-1 bg-gray-200">فهرست صفحات</div>
-          <table className="border-4  border-black w-8/12 flex flex-col m-auto">
+          <table className="border-2 md:border-4  border-black md:w-8/12 flex flex-col m-auto">
             <thead>
-              <tr className="border-4 border-black flex flex-row justify-between p-4">
+              <tr className="border-2 md:border-4 border-black flex flex-row justify-between p-4">
                 <th>ردیف</th>
                 <th>اطلاعات مطلب</th>
                 <th></th>
@@ -77,7 +77,7 @@ export default function PagesList(props) {
               {pagesContentsByType.map((type, index) => (
                 <tr
                   key={`row-${type.name}`}
-                  className="border-4 border-black flex flex-row justify-between hover:bg-gray-100 items-center px-4 py-2"
+                  className="border-2 md:border-4 border-black flex flex-row justify-between hover:bg-gray-100 items-center px-4 py-2"
                 >
                   <td>{index + 1}</td>
                   <td>

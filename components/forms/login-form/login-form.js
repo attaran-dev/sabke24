@@ -29,7 +29,7 @@ function LoginForm() {
 
   return (
     <form
-      className="flex flex-col border-8 p-8 rounded-2xl w-1/3 m-auto gap-4"
+      className="flex flex-col border-8 p-8 rounded-2xl lg:w-1/3 md:w-2/3 m-auto gap-4  "
       onSubmit={handleSubmit}
     >
       <label htmlFor="email" className="text-right">

@@ -32,7 +32,9 @@ export default function RootLayout({ children }) {
   return (
 <>
 {
-pathname !== "/" && pathname !=="/blog/[postid]" &&
+pathname !== "/"
+// && pathname !=="/blog/[postid]"
+ &&
 <Header fonts={`${baloo.variable} ${rubik.variable} ${notoSansArabic.variable} ${lalezar.variable}`} />
 }
           <main

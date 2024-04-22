@@ -18,7 +18,7 @@ export default function About(props) {
       <div className="m-auto rounded bg-gray-200 p-1 inline-block">
         <h1>در مورد این‌جا</h1>
       </div>
-      <div id="content" className="mx-40 font-baloo text-2xl text-justify"></div>
+      <div id="content" className="mx-8 lg:mx-40 md:mx-20 font-baloo md:text-lg lg:text-2xl text-justify"></div>
     </div>
   );
 }

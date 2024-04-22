@@ -47,41 +47,43 @@ export default function Post(props) {
       <div
         id="container"
         dir="ltr"
-        className="flex flex-row gap-8 p-[60px_60px_60px_40px]"
+        className="flex flex-row justify-center gap-8 py-6 md:p-[60px_60px_60px_40px]"
       >
         <Menu />
         <div
           dir="rtl"
-          className={`bg-white w-10/12 overflow-auto rounded-r-lg rounded-l-lg`}
+          className={`bg-white w-10/12 overflow-auto rounded-r-lg rounded-l-lg self-end`}
           id="post-content"
           onScroll={() => countScrollProgress()}
         >
           <div>
             <div
               id="post-title"
-              className="flex flex-col m-6 text-center font-bold text-3xl"
+              className="flex flex-col m-6 text-center font-bold lg:text-3xl md:text-xl text-lg"
             >
               {post.title}
             </div>
-            <div id="post-meta" className="flex flex-row gap-4 mr-8 my-2 ml-2">
+            <div id="post-meta" className="flex flex-row md:gap-4 md:mx-4 lg:mx-6 my-2 mx-2 gap-2">
               {!category && <span>loading...</span>}
               <Link
                 href={`/category/${post.category}`}
-                className=" border rounded p-1"
+                className=" border rounded p-1 text-xs md:text-sm"
               >
                 {category}
               </Link>
               {/* <div className=" border rounded p-1">{post.author}</div> */}
-              <div className=" border rounded p-1">{creationDate}</div>
+              <div className=" border rounded p-1 text-xs md:text-sm">{creationDate}</div>
             </div>
           </div>
           <hr />
           <div
-            className="m-16 text-lg text-right leading-loose text-sky-950 text-justify"
+            className="m-6 text-xs md:text-sm lg:text-base md:m-8 lg:text-lg lg:m-12 text-right leading-loose text-sky-950 text-justify"
             id="content"
           ></div>
         </div>
+        <div className="hidden md:block">
         <CategoryElement category={post.category} />
+        </div>
         <style jsx>
           {`
             .dropdown {

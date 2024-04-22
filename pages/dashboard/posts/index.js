@@ -103,9 +103,9 @@ export default function PostsList(props) {
               
             <div className="rounded p-1 bg-gray-200">فهرست پست‌ها</div>
 
-            <table className="border-4  border-black  w-8/12 flex flex-col m-auto">
+            <table className="border-2 md:border-4  border-black  w-11/12 flex flex-col m-auto">
               <thead>
-                <tr className="border-4 border-black flex flex-row justify-between p-4">
+                <tr className="border-2 md:border-4 border-black flex flex-row justify-between p-2 md:p-4 text-sm md:text-base">
                   <th>ردیف</th>
                   <th>اطلاعات مطلب</th>
                   <th><Link href={"/dashboard/posts/new-post"} className="rounded p-1 bg-gray-200 hover:bg-gray-300">ایجاد پست جدید</Link></th>
@@ -115,7 +115,7 @@ export default function PostsList(props) {
                 {pagePosts.map((post, index) => (
                   <tr
                     key={`row-${index + 1}`}
-                    className="border-4 border-black flex flex-row justify-between hover:bg-gray-100 items-center px-4"
+                    className="border-2 md:border-4 border-black flex flex-row justify-between hover:bg-gray-100 items-center px-4"
                   >
                     <td>{index + 1}</td>
                     <td>
@@ -178,13 +178,13 @@ export default function PostsList(props) {
             <p>آیا مطمئنید می‌خواهید این مطلب را حذف کنید؟</p>
             <div className="flex justify-center gap-4 my-6">
               <button
-                className="border-4 border-black p-2 font-bold"
+                className="border-2 md:border-4 border-black p-2 font-bold"
                 onClick={() => closeDeleteModal()}
               >
                 لغو
               </button>
               <button
-                className="border-4 border-black p-2 font-bold"
+                className="border-2 md:border-4 border-black p-2 font-bold"
                 onClick={() => deletePost(postIdToDelete)}
               >
                 حذف

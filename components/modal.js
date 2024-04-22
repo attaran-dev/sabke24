@@ -3,7 +3,7 @@ export default function Modal({ children, modalState, handleModal }) {
     <div
       className={`${
         modalState === "open"
-          ? "flex flex-col absolute top-32 inset-x-1/4 bg-white backdrop-blur-xl bg-white/30 border-4 border-black p-8"
+          ? "flex flex-col absolute top-20 inset-x-1/12 md:inset-x-1/8 lg:top-32 lg:inset-x-1/4 bg-white backdrop-blur-xl bg-white/30 border-4 border-black p-1 md:p-8"
           : "hidden"
       }`}
     >

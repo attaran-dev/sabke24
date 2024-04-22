@@ -43,7 +43,7 @@ export default function CategoryPage(props) {
       </div>
       <div
         id="content"
-        className="mx-40 font-baloo text-2xl text-justify"
+        className="m-8 lg:mx-40 md:mx-20 font-baloo md:text-lg lg:text-2xl text-justify"
       ></div>
       <RecentPosts posts={categoryPosts} />
     </div>

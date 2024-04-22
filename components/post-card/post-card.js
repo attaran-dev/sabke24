@@ -15,10 +15,10 @@ useEffect(()=>{
       href={`/blog/${url}`}
       onMouseOver={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="p-4 rounded-lg border-4 w-48 h-48 flex items-center justify-center text-center"
+      className="p-4 rounded-lg border-4 w-24 h-24 sm:w-36 sm:h-36 lg:w-48 lg:h-48 flex items-center justify-center text-center"
     >
-      {!hovered && <span className="animate-[fadein_0.5s] text-lg font-bold">{title}</span>}
-      {hovered && <p className="text-sm animate-[fadein_0.5s]">{brief}</p>}
+      {!hovered && <span className="animate-[fadein_0.5s] text-xs sm:text-md lg:text-lg font-bold">{title}</span>}
+      {hovered && <p className="text-sm animate-[fadein_0.5s] hidden lg:block">{brief}</p>}
     </Link>
   );
 }
