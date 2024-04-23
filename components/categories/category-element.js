@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function CategoryElement({ category }) {
   if (category === "hygiene") {
     return (
-      <div className="absolute left-10 bottom-6 ">
+      <div className="absolute lg:left-10 lg:bottom-6 lg:scale-100 md:left-8 md:-bottom-8 md:scale-[0.65]">
         <div className="relative ">
           <Image
             alt=""
@@ -48,7 +48,7 @@ export default function CategoryElement({ category }) {
     );
   } else if (category === "nutrition") {
     return (
-      <div className="absolute left-15 bottom-12 ">
+      <div className="absolute lg:left-12 lg:bottom-12 md:left-8 md:bottom-4">
         <div>
           <Image
             alt=""
@@ -83,7 +83,7 @@ export default function CategoryElement({ category }) {
     );
   } else if (category === "recreation") {
     return (
-      <div className="absolute left-16 bottom-8 ">
+      <div className="absolute lg:left-16 lg:bottom-8 lg:scale-100 md:scale-75 md:left-8 md:bottom-0">
         <div className="relative ">
           <Image
             alt=""
@@ -104,7 +104,7 @@ export default function CategoryElement({ category }) {
     );
   } else if (category === "income-expense") {
     return (
-      <div className="absolute left-2 bottom-2 ">
+      <div className="absolute md:left-2 md:bottom-2 md:scale-75 lg:scale-100">
         <div className="relative ">
           <Image
             alt=""
@@ -118,7 +118,7 @@ export default function CategoryElement({ category }) {
     );
   } else if (category === "prayer") {
     return (
-      <div className="absolute left-24 bottom-6 ">
+      <div className="absolute md:left-24 md:bottom-6 lg:scale-100 md:scale-75">
         <div className="relative ">
           <Image
             alt=""
@@ -132,7 +132,7 @@ export default function CategoryElement({ category }) {
     );
   } else if (category === "sport") {
     return (
-      <div className="absolute left-15 bottom-12 ">
+      <div className="absolute left-16 bottom-12 ">
         <div className="">
           <Image
             alt=""
