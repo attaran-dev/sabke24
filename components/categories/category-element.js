@@ -76,7 +76,6 @@ export default function CategoryElement({ category }) {
             src={"/images/telephone.svg"}
             width={200}
             height={200}
-            
           />
         </div>
       </div>
@@ -104,16 +103,11 @@ export default function CategoryElement({ category }) {
     );
   } else if (category === "income-expense") {
     return (
-      <div className="absolute md:left-2 md:bottom-2 md:scale-75 lg:scale-100">
-        <div className="relative ">
-          <Image
-            alt=""
-            src={"/images/wallet.png"}
-            width={250}
-            height={250}
-            
-          />
-        </div>
+      <div id="element" className="absolute left-12 bottom-28 md:scale-75 lg:scale-100 group">
+
+                    <Image alt="" src={"/images/wallet.png"} width={250} height={250} id="wallet" className="absolute z-10" />
+                    <Image alt="" src={"/images/money-quarter.jpg"} width={200} height={200} id="money" className="translate-x-20 translate-y-2 scale-50 rotate-[24deg] transition duration-700 group-hover:-rotate-[2deg] origin-left" />
+
       </div>
     );
   } else if (category === "prayer") {
