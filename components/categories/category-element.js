@@ -3,139 +3,217 @@ import Image from "next/image";
 export default function CategoryElement({ category }) {
   if (category === "hygiene") {
     return (
-      <div className="absolute lg:left-10 lg:bottom-6 lg:scale-100 md:left-8 md:-bottom-8 md:scale-[0.65]">
-        <div className="relative ">
+        <div className="relative">
           <Image
             alt=""
             src={"/images/washingMachine.svg"}
             width={0}
             height={0}
-            style={{ width: "200px", height: "auto" }}
+            className="[user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]"
+            style={{ width: "160px", height: "auto" }}
           />
           <Image
             alt=""
             src={"/images/clothes.svg"}
             width={0}
             height={0}
-            style={{ width: "90px", height: "auto" }}
-            className="absolute left-14 bottom-[100px] animate-wmspin"
+            style={{ width: "64px", height: "auto" }}
+            className="absolute left-[50px] bottom-[84px] animate-wmspin
+           
+            [user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]
+            "
           />
           <Image
             alt=""
             src={"/images/washingMachineDoor.svg"}
             width={0}
             height={0}
-            style={{ width: "90px", height: "auto" }}
-            className="absolute left-14 bottom-[100px]"
+            style={{ width: "72px", height: "auto" }}
+            className="absolute left-[44px] bottom-[80px]
+           
+            [user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]"
           />
         </div>
-      </div>
     );
   } else if (category === "thought") {
     return (
-      <div className="absolute left-8 bottom-14">
-        <div>
-          <Image alt="" src={"/images/book4.svg"} width={200} height={200} />
-          <Image
-            alt=""
-            src={"/images/paper.svg"}
-            width={15}
-            height={15}
-            className="absolute left-[87px] bottom-4 animate-bwiggle"
-          />
-        </div>
+      <div className="relative">
+        <Image
+          alt=""
+          src={"/images/book4.svg"}
+          width={200}
+          height={200}
+          className="[user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]"
+        />
+        <Image
+          alt=""
+          src={"/images/paper.svg"}
+          width={15}
+          height={15}
+          className="absolute left-[87px] bottom-4 animate-bwiggle
+             [user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]"
+        />
       </div>
     );
   } else if (category === "nutrition") {
     return (
-      <div className="absolute lg:left-12 lg:bottom-12 md:left-8 md:bottom-4">
-        <div>
-          <Image
-            alt=""
-            src={"/images/cupOfTea3.png"}
-            width={200}
-            height={200}
-            className="scale-x-[-1] -rotate-2"
-          />
-          <Image
-            alt=""
-            src={"/images/TEL-fresh-espresso-steam.gif"}
-            width={200}
-            height={200}
-            className="absolute -left-6 bottom-[92px]"
-          />
-        </div>
+      <div className="flex ">
+        <Image
+          alt=""
+          src={"/images/cupOfTea3.png"}
+          width={200}
+          height={200}
+          className="scale-x-[-1] -rotate-2 
+           
+            [user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]"
+        />
+        <Image
+          alt=""
+          src={"/images/TEL-fresh-espresso-steam.gif"}
+          width={200}
+          height={200}
+          className="absolute -translate-y-[182px] -translate-x-[23px]       
+            [user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]"
+          unoptimized
+        />
       </div>
     );
   } else if (category === "communication") {
     return (
-      <div className="absolute left-10 bottom-6 ">
-        <div className="relative ">
-          <Image
-            alt=""
-            src={"/images/telephone.svg"}
-            width={200}
-            height={200}
-          />
-        </div>
+      <div>
+        <Image
+          alt=""
+          src={"/images/telephone.svg"}
+          width={200}
+          height={200}
+          className="[user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]"
+        />
       </div>
     );
   } else if (category === "recreation") {
     return (
-      <div className="absolute lg:left-16 lg:bottom-8 lg:scale-100 md:scale-75 md:left-8 md:bottom-0">
-        <div className="relative ">
-          <Image
-            alt=""
-            src={"/images/parkLamp.svg"}
-            width={80}
-            height={80}
-            className="absolute left-32 bottom-[110px]"
-          />
-          <Image
-            alt=""
-            src={"/images/bench.svg"}
-            width={160}
-            height={160}
-            className=""
-          />
-        </div>
+      <div className="flex lg:scale-100 md:scale-75">
+        <Image
+          alt=""
+          src={"/images/parkLamp.svg"}
+          width={80}
+          height={80}
+          className="
+            [user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]"
+        />
+        <Image
+          alt=""
+          src={"/images/bench.svg"}
+          width={160}
+          height={160}
+          className=" -translate-x-4 translate-y-4
+            [user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]"
+        />
       </div>
     );
   } else if (category === "income-expense") {
     return (
-      <div id="element" className="absolute left-12 bottom-28 md:scale-75 lg:scale-100 group">
-
-                    <Image alt="" src={"/images/wallet.png"} width={250} height={250} id="wallet" className="absolute z-10" />
-                    <Image alt="" src={"/images/money-quarter.jpg"} width={200} height={200} id="money" className="translate-x-20 translate-y-2 scale-50 rotate-[24deg] transition duration-700 group-hover:-rotate-[2deg] origin-left" />
-
+      <div id="element" className="relative md:scale-75 lg:scale-100 group">
+        <Image
+          alt=""
+          src={"/images/wallet.png"}
+          width={250}
+          height={250}
+          id="wallet"
+          className="absolute bottom-0 z-10
+           [user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]"
+        />
+        <Image
+          alt=""
+          src={"/images/money-quarter.jpg"}
+          width={200}
+          height={200}
+          id="money"
+          className="translate-x-[79px] -translate-y-[90px] scale-50 rotate-[24deg] transition duration-700 group-hover:-rotate-[2deg] origin-left
+           [user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]"
+        />
       </div>
     );
   } else if (category === "prayer") {
     return (
-      <div className="absolute md:left-24 md:bottom-6 lg:scale-100 md:scale-75">
-        <div className="relative ">
-          <Image
-            alt=""
-            src={"/images/tasbih.svg"}
-            width={120}
-            height={120}
-            className="animate-twiggle"
-          />
-        </div>
+      <div className="lg:scale-100 md:scale-75 ">
+        <Image
+          alt=""
+          src={"/images/tasbih.svg"}
+          width={120}
+          height={120}
+          className="animate-twiggle
+             [user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]"
+        />
       </div>
     );
   } else if (category === "sport") {
     return (
-      <div className="absolute left-16 bottom-12 ">
-        <div className="">
-          <Image
-            alt=""
-            src={"/images/soccerBall2.svg"}
-            width={150}
-            height={150}
-            className=" transition ease-in-out origin-bottom duration-[1200ms] hover:rotate-6 hover:translate-x-1 "
-          />
-        </div>
+      <div>
+        <Image
+          alt=""
+          src={"/images/soccerBall2.svg"}
+          width={150}
+          height={150}
+          className=" transition ease-in-out origin-bottom duration-[1200ms] hover:rotate-6 hover:translate-x-1
+             [user-drag:none] [-webkit-user-drag:none]
+            [user-select:none]
+            [-moz-user-select:none]
+            [-webkit-user-select:none]
+            [-ms-user-select:none]"
+        />
       </div>
     );
   }

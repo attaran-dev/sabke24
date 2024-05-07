@@ -49,10 +49,15 @@ export default function Post(props) {
         dir="ltr"
         className="flex flex-row justify-center gap-8 py-6 md:p-[60px_60px_60px_40px]"
       >
+        <div className="flex flex-col gap-8 justify-between items-center">
         <Menu />
+        <div className="hidden md:block">
+        <CategoryElement category={post.category} />
+        </div>
+        </div>
         <div
           dir="rtl"
-          className={`bg-white w-10/12 overflow-auto rounded-r-lg rounded-l-lg self-end`}
+          className={`bg-white w-10/12 overflow-auto rounded-r-lg rounded-l-lg`}
           id="post-content"
           onScroll={() => countScrollProgress()}
         >
@@ -81,9 +86,7 @@ export default function Post(props) {
             id="content"
           ></div>
         </div>
-        <div className="hidden md:block">
-        <CategoryElement category={post.category} />
-        </div>
+
         <style jsx>
           {`
             .dropdown {
