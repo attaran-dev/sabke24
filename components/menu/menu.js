@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Menu() {
   return (
     <div
-      className="h-full w-60 p-4 rounded-lg backdrop-blur-md font-semibold hidden md:block"
+      className="w-60 p-4 rounded-lg backdrop-blur-md font-semibold hidden md:block"
       id="menu"
     >
       <div className="flex flex-col gap-12 text-lg text-center text-amber-900 py-12 px-4 rounded-lg border-white border-4">

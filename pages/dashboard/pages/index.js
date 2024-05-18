@@ -89,7 +89,12 @@ export default function PagesList(props) {
                           : pageType === "recom"
                           ? recomTypeFa(type.name)
                           : pageType === "about"
-                          ? "درباره"
+                          ? (type.name==="about"
+                          ?"درباره"
+                          : type.name==="contact-me"
+                          ? "تماس با من"
+                          : null
+                        )
                           : null}
                       </div>
                     </div>
