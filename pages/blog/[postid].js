@@ -49,9 +49,9 @@ export default function Post(props) {
         dir="ltr"
         className="flex flex-row justify-center gap-8 py-6 md:p-[60px_60px_60px_40px]"
       >
-        <div className="flex flex-col gap-8 justify-between items-center">
+        <div className="md:flex flex-col hidden gap-8 justify-between items-center">
         <Menu />
-        <div className="hidden md:block">
+        <div>
         <CategoryElement category={post.category} />
         </div>
         </div>
