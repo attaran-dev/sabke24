@@ -42,6 +42,10 @@ export default function Recom(props) {
       <div className="m-auto rounded bg-gray-200 p-1 inline-block">
         <h1>معرفی دیگران</h1>
       </div>
+      {groupPosts.length === 0 && podcastPosts.length === 0 && bookPosts.length === 0 && appPosts.length === 0 && 
+      (
+        <p className="text-center my-12">هنوز کسی یا چیزی معرفی نشده است. </p>
+      )}
       <ul className="flex flex-col md:flex-row gap-2 m-4 md:gap-4 justify-center md:m-8">
         {bookPosts.length > 0 && (
           <li
