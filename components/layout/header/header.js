@@ -1,20 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-// import classes from "./header.module.css";
 
-// export function calHeight(elementSelector) {
-//   const element = document.querySelector(elementSelector);
-//   const elementHeight = element.offsetHeight;
-//   return elementHeight;
-// }
-// export const headerHeight = headerHeightState;
 function Header({ fonts }) {
-  //   const [headerHeightState, setHeaderHeightState]= useState("")
-  //   useEffect(()=>{
-  //   const headerHeight = calHeight("header");
-  //   setHeaderHeightState(headerHeight)
-  //   }, [headerHeightState])
   const router = useRouter();
   const pathname = router.pathname;
   return (
@@ -23,9 +10,9 @@ function Header({ fonts }) {
         pathname === "/blog/[postid]" ? "md:hidden" : null
       }`}
     >
-      <div className="flex flex-col justify-center items-center py-3 px-6 gap-2 sm:rounded-xl w-screen md:w-fit shadow-2xl bg-white">
+      <div className="flex flex-col justify-center items-center py-3 px-6 gap-2 sm:rounded-b-xl w-screen md:w-fit shadow-2xl bg-white">
         <div>
-          <Link className="font-lalezar text-2xl" href="/">
+          <Link className="font-rubik font-bold text-2xl" href="/">
             سبک ۲۴
           </Link>
         </div>
