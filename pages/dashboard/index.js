@@ -35,6 +35,18 @@ export default function Dashboard() {
                 مدیریت پست‌ها
               </Link>
               <Link
+                href={`/dashboard/radio`}
+                className="text-center rounded bg-gray-100 hover:bg-gray-200 p-1"
+              >
+                مدیریت رادیو
+              </Link>
+              <Link
+                href={`/dashboard/bookshelf`}
+                className="text-center rounded bg-gray-100 hover:bg-gray-200 p-1"
+              >
+                مدیریت قفسه
+              </Link>
+              <Link
                 href={`/dashboard/change-password`}
                 className="text-center rounded bg-gray-100 hover:bg-gray-200 p-1"
               >
