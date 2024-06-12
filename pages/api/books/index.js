@@ -1,6 +1,7 @@
 import { writeFile } from 'fs/promises';
 import { join } from 'path';
 import { connectToDatabase } from "@/utils/db";
+import fs from 'fs'
 
 export const config = {
     api: {
