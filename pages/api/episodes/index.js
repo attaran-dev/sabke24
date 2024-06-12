@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     }
 
     const bytes = Buffer.from(file, 'base64'); // Convert base64 to buffer
-    const filePath = join(process.cwd(), 'radio', `${url}.mp3`);
+    const filePath = join(process.cwd(),'public' ,'radio', `${url}.mp3`);
     const newEpisode = {id, title, url, creationDate, brief, filePath}
     console.log(filePath);
     await writeFile(filePath, bytes);
