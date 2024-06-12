@@ -33,7 +33,7 @@ export default async function handler(req, res) {
        console.log(`File exists: ${fileExists}`);
    
        // Log the contents of the directory
-       const directoryContents = fs.readdirSync(join(process.cwd(), 'public', 'radio'));
+       const directoryContents = fs.readdirSync(join(process.cwd(), 'public', 'audio', 'radio'));
        console.log(`Directory contents: ${directoryContents}`);
    
        if (!fileExists) {

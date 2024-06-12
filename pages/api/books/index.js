@@ -24,8 +24,22 @@ export default async function handler(req, res) {
     const bytes = Buffer.from(file, 'base64'); // Convert base64 to buffer
     const filePath = join(process.cwd(), 'public', 'images' , 'bookshelf', `${url}.jpg`);
     const newBook = {id, title, url, creationDate, brief, filePath}
-    console.log(filePath);
+    console.log(`Saving file to: ${filePath}`);
     await writeFile(filePath, bytes);
+   
+       // Verify the file is saved correctly
+       const fileExists = fs.existsSync(filePath);
+       console.log(`File exists: ${fileExists}`);
+   
+       // Log the contents of the directory
+       const directoryContents = fs.readdirSync(join(process.cwd(), 'public', 'images', 'bookshelf'));
+       console.log(`Directory contents: ${directoryContents}`);
+   
+       if (!fileExists) {
+         throw new Error('File was not saved successfully.');
+       }
+   
+
     const client = await connectToDatabase();
     const db = client.db();
     await db.collection("books").insertOne(newBook);
