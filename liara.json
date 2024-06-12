@@ -1,5 +1,5 @@
 {
     "platform": "next",
     "app": "sabke-24",
-    "disks":[{"name": "radio", "mountTo":"public/radio"}, {"name": "bookshelf", "mountTo":"public/bookshelf"}]
+    "disks":[{"name": "radio", "mountTo":"/radio"}, {"name": "bookshelf", "mountTo":"/bookshelf"}]
   }
