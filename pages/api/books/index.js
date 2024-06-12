@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     }
 
     const bytes = Buffer.from(file, 'base64'); // Convert base64 to buffer
-    const filePath = join(process.cwd(), 'public', 'bookshelf', `${url}.jpg`);
+    const filePath = join(process.cwd(), 'public', 'images' , 'bookshelf', `${url}.jpg`);
     const newBook = {id, title, url, creationDate, brief, filePath}
     console.log(filePath);
     await writeFile(filePath, bytes);
