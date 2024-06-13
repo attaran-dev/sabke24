@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import PostContentEditor from "../form-parts/post-editor";
+import { S3 } from "aws-sdk";
 
 export default function CreateBookForm(props) {
   const { totalBooksNum, booksTitles, booksUrls } = props.props;
@@ -18,13 +19,63 @@ export default function CreateBookForm(props) {
     setContent(newContent);
   }
 
-  function handleFileChange(e) {
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      setFile(event.target.result.split(",")[1]); // Extract base64 content
-    };
-    reader.readAsDataURL(e.target.files[0]);
-  }
+  // function handleFileChange(e) {
+  //   const reader = new FileReader();
+  //   reader.onload = (event) => {
+  //     setFile(event.target.result.split(",")[1]); // Extract base64 content
+  //   };
+  //   reader.readAsDataURL(e.target.files[0]);
+  // }
+
+  const ACCESSKEY = "uk30t82t1s5u97k7"; // or process.env.LIARA_ACCESS_KEY;
+  const SECRETKEY = "85c140ae-4864-4e43-8c67-d23701c1b2dc"; //  or process.env.LIARA_SECRET_KEY;
+  const ENDPOINT = "https://storage.iran.liara.space"; //   or process.env.LIARA_ENDPOINT;
+  const BUCKET = "sabke24-files"; //    or process.env.LIARA_BUCKET_NAME;
+
+
+
+
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+
+  const handleUpload = async () => {
+    try {
+
+      const s3 = new S3({
+        accessKeyId: ACCESSKEY,
+        secretAccessKey: SECRETKEY,
+        endpoint: ENDPOINT,
+      });
+
+      const params = {
+        Bucket: BUCKET,
+        Key: file.name,
+        Body: file,
+      };
+ toast.loading("در حال بارگزاری");
+      const response = await s3.upload(params).promise();
+// console.log(response)
+      // Get permanent link
+      const permanentLink = s3.getSignedUrl('getObject', {
+        Bucket: BUCKET,
+        Key: file.name,
+        Expires: 31536000, // 1 year
+      });
+
+      // setPermanentLink(permanentSignedUrl);
+
+console.log(response);
+  
+
+  return permanentLink
+
+    } catch (error) {
+      toast.error(error.message);
+      
+    }
+  };
+
   function checkTitleUniquity(title) {
     const result = booksTitles.find((bookTitle) => bookTitle === title);
 
@@ -45,6 +96,38 @@ export default function CreateBookForm(props) {
   }
   function handleSubmit(e) {
     e.preventDefault();
+    handleUpload().then((permanentLink)=>{
+      const titleUniquity = checkTitleUniquity(title);
+      const urlUniquity = checkUrlUniquity(url);
+      toast.remove()
+      if (permanentLink && title !== "" && url !== "" && titleUniquity && urlUniquity) {
+        axios
+          .post("/api/books", {
+            id: (totalBooksNum + 1).toString(),
+            title,
+            url,
+            creationDate: Date.now(),
+            brief,
+            author,
+            content,
+            permanentLink,
+          })
+          .then((response) => toast.success(response.data.message))
+          .catch((error) => toast.error(error.response.data.message));
+        setTimeout(() => {
+          router.replace("/dashboard/bookshelf");
+        }, 2000);
+        return;
+      } else if (!titleUniquity) {
+        toast.error("عنوان تکراری است");
+        return;
+      } else if (!urlUniquity) {
+        toast.error("آدرس تکراری است");
+        return;
+      } else {
+        toast.error("یکی از فیلدهای ضروری خالی است");
+      }
+    })
     const titleUniquity = checkTitleUniquity(title);
     const urlUniquity = checkUrlUniquity(url);
     if (file && title !== "" && url !== "" && titleUniquity && urlUniquity) {
