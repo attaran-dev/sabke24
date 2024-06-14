@@ -41,7 +41,7 @@ export default async function handler(req, res) {
         );
 
         res.status(201).json({
-          message: "اپیسود حذف شد",
+          message: "کتاب حذف شد",
         });
       } else {
         res.status(500).json({
@@ -50,7 +50,7 @@ export default async function handler(req, res) {
       }
     } else {
       res.status(409).json({
-        message: "اپیسودی با این مشخصات یافت نشد",
+        message: "کتابی با این مشخصات یافت نشد",
       });
     }
   } else if (req.method === "PUT") {
@@ -117,7 +117,7 @@ export default async function handler(req, res) {
           }
         );
         res.status(201).json({
-          message: "اپیسود تغییر کرد",
+          message: "کتاب تغییر کرد",
           editedBook: editedBook,
         });
       } else {
@@ -127,7 +127,7 @@ export default async function handler(req, res) {
       }
     } else {
       res.status(409).json({
-        message: "اپیسودی با این مشخصات یافت نشد",
+        message: "کتابی با این مشخصات یافت نشد",
       });
     }
   } else {
