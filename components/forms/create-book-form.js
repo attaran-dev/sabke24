@@ -127,36 +127,8 @@ console.log(response);
       } else {
         toast.error("یکی از فیلدهای ضروری خالی است");
       }
-    })
-    const titleUniquity = checkTitleUniquity(title);
-    const urlUniquity = checkUrlUniquity(url);
-    if (file && title !== "" && url !== "" && titleUniquity && urlUniquity) {
-      axios
-        .post("/api/books", {
-          id: (totalBooksNum + 1).toString(),
-          title,
-          url,
-          creationDate: Date.now(),
-          brief,
-          author,
-          content,
-          file,
-        })
-        .then((response) => toast.success(response.data.message))
-        .catch((error) => toast.error(error.response.data.message));
-      setTimeout(() => {
-        router.replace("/dashboard/bookshelf");
-      }, 2000);
-      return;
-    } else if (!titleUniquity) {
-      toast.error("عنوان تکراری است");
-      return;
-    } else if (!urlUniquity) {
-      toast.error("آدرس تکراری است");
-      return;
-    } else {
-      toast.error("یکی از فیلدهای ضروری خالی است");
-    }
+    });
+
   }
 
   return (
