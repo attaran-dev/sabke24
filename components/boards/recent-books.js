@@ -1,7 +1,6 @@
 import BookCard from "../cards/book-card/book-card";
 
-export default function RecentBooks(props) {
-  const { books } = props;
+export default function RecentBooks({books}) {
   return (
     <div className="">
       {books.length === 0 && (
@@ -19,6 +18,9 @@ export default function RecentBooks(props) {
                 url={book.url}
                 title={book.title}
                 brief={book.brief}
+                content={book.content}
+                permanentLink={book.permanentLink}
+                author={book.author}
               />
             ))}
           </div>

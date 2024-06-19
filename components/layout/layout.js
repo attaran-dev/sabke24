@@ -2,7 +2,12 @@ import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
 import Footer from "./footer/footer";
 import Header from "./header/header";
-import { Baloo_Bhaijaan_2, Rubik, Noto_Sans_Arabic, Lalezar } from "next/font/google";
+import {
+  Baloo_Bhaijaan_2,
+  Rubik,
+  Noto_Sans_Arabic,
+  Lalezar,
+} from "next/font/google";
 
 const baloo = Baloo_Bhaijaan_2({
   subsets: ["arabic", "latin"],
@@ -20,33 +25,31 @@ const notoSansArabic = Noto_Sans_Arabic({
 });
 
 const lalezar = Lalezar({
-  subsets:['arabic'],
-  weight:["400"],
-  variable:"--font-lalezar"
-})
+  subsets: ["arabic"],
+  weight: ["400"],
+  variable: "--font-lalezar",
+});
 
 export default function RootLayout({ children }) {
   const router = useRouter();
   const pathname = router.pathname;
   // console.log(pathname);
   return (
-<>
-{
-pathname !== "/"
-// && pathname !=="/blog/[postid]"
- &&
-<Header fonts={`${baloo.variable} ${rubik.variable} ${notoSansArabic.variable} ${lalezar.variable}`} />
-}
-          <main
-      className={`${baloo.variable} ${rubik.variable} ${notoSansArabic.variable} ${lalezar.variable} font-noto`}
-      dir="rtl"
-    >
-      {children}
-    </main>
-</>
-
-
-
-
+    <>
+      {pathname !== "/" &&
+      pathname !=="/bookshelf/[bookid]" &&
+      (
+        // && pathname !=="/blog/[postid]"
+        <Header
+          fonts={`${baloo.variable} ${rubik.variable} ${notoSansArabic.variable} ${lalezar.variable}`}
+        />
+      )}
+      <main
+        className={`${baloo.variable} ${rubik.variable} ${notoSansArabic.variable} ${lalezar.variable} font-noto`}
+        dir="rtl"
+      >
+        {children}
+      </main>
+    </>
   );
 }

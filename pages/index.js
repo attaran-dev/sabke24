@@ -5,12 +5,15 @@ import Link from "next/link";
 import { Fragment } from "react";
 import { FaAnglesDown } from "react-icons/fa6";
 import { useContext, useEffect } from "react";
+import RecentBooks from "@/components/boards/recent-books";
 
-export default function Home({lastEpisode}) {
+export default function Home({lastEpisode, recentBooks}) {
   
   const {generalContext,setGeneralContext} = useContext(GeneralContext);
   useEffect(()=>{
 const {id, url, title, brief, permanentLink} = lastEpisode[0];
+  console.log(lastEpisode);
+  console.log(id, url, title, brief, permanentLink);
 
 if(!generalContext.playingEpisode.permanentLink){
   setGeneralContext({...generalContext, playingEpisode:{id, url, title, brief, permanentLink}});
@@ -54,7 +57,12 @@ console.log(generalContext);
     
 
     <div>برای شنیدن اپیزودهای بیشتر <Link href={'/radio'} className="text-[#6d5946]">کلیک</Link> کنید.</div>
+    <Link href={'#bookshelf'} className="text-3xl text-[#6d5946] animate-bounce"><FaAnglesDown className="" /></Link>
     </div>
+    </div>
+    <div id="bookshelf" className="overflow-x-hidden [height:100dvh] md:h-screen flex flex-col gap-16 items-center justify-start">
+    <div className="flex flex-col text-3xl font-bold mt-8 md:mt-24 text-[#6d5946]">قفسهٔ کتاب</div>
+    <RecentBooks books={recentBooks} />
     </div>
     </Fragment>
 
@@ -65,10 +73,12 @@ export async function getServerSideProps() {
   const client = await connectToDatabase();
   const db = client.db();
   const lastEpisode = await db.collection('episodes').find().sort({creationDate: -1}).limit(1).toArray();
+const recentBooks = await db.collection('books').find().sort({creationDate: -1}).toArray();
   client.close()
   return {
     props: {
       lastEpisode: JSON.parse(JSON.stringify(lastEpisode)),
+      recentBooks: JSON.parse(JSON.stringify(recentBooks)),
     }
   };
 }
