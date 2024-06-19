@@ -1,7 +1,19 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+// import classes from "./header.module.css";
 
+// export function calHeight(elementSelector) {
+//   const element = document.querySelector(elementSelector);
+//   const elementHeight = element.offsetHeight;
+//   return elementHeight;
+// }
+// export const headerHeight = headerHeightState;
 function Header({ fonts }) {
+  //   const [headerHeightState, setHeaderHeightState]= useState("")
+  //   useEffect(()=>{
+  //   const headerHeight = calHeight("header");
+  //   setHeaderHeightState(headerHeight)
+  //   }, [headerHeightState])
   const router = useRouter();
   const pathname = router.pathname;
   return (
@@ -16,14 +28,25 @@ function Header({ fonts }) {
             سبک ۲۴
           </Link>
         </div>
-        <div className="flex flex-row-reverse gap-6">
-          <Link href="/blog">وبلاگ</Link>
-
-          <Link className={``} href="/recommendations">
+        <div className="flex text-xs flex-row-reverse flex-row w-full justify-between items-center">
+          <Link className="hover:bg-gray-100 rounded-md p-1" href="/blog">
+            وبلاگ
+          </Link>
+          <Link className="hover:bg-gray-100 rounded-md p-1" href="/radio">
+            رادیو
+          </Link>
+          <Link className="hover:bg-gray-100 rounded-md p-1" href="/bookshelf">
+            قفسه
+          </Link>
+          <Link
+            className="hover:bg-gray-100 rounded-md p-1"
+            href="/recommendations"
+          >
             معرفی دیگران
           </Link>
-
-          <Link href="/about">در مورد این‌جا</Link>
+          <Link className="hover:bg-gray-100 rounded-md p-1" href="/about">
+            در مورد این‌جا
+          </Link>
         </div>
       </div>
     </header>

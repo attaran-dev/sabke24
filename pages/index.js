@@ -35,6 +35,12 @@ console.log(generalContext);
         <Link className="rounded bg-gray-200 p-1 hover:bg-gray-300" href={"/blog"}>
           وبلاگ
         </Link>
+        <Link className="rounded bg-gray-200 p-1 hover:bg-gray-300" href={"#radio"}>
+          رادیو
+        </Link>
+        <Link className="rounded bg-gray-200 p-1 hover:bg-gray-300" href={"#bookshelf"}>
+        قفسهٔ کتاب
+        </Link>
         <Link className="rounded bg-gray-200 p-1 hover:bg-gray-300" href={"/recommendations"}>
           معرفی دیگران
         </Link>
@@ -47,10 +53,10 @@ console.log(generalContext);
 <Link href={'#radio'} className="absolute bottom-6 left-[49%] text-3xl text-white animate-bounce"><FaAnglesDown className="" /></Link>
     </div>
     <div  id="radio" className="overflow-x-hidden [height:100dvh] md:h-screen flex flex-col justify-start gap-16 items-center">
-      <div className="flex flex-col text-3xl font-bold mt-8 md:mt-24 text-[#6d5946]">رادیو سبک ۲۴</div>
+      <div className="flex flex-col text-3xl font-bold mt-8 md:mt-24 text-[#6d5946]">رادیو حیات</div>
     
     <div className="flex flex-col items-center justify-evenly flex-1">
-<div>آخرین اپیزود سبک ۲۴ را می‌توانید همین‌جا بشنوید.</div>
+<div>آخرین اپیزود رادیو حیات را می‌توانید همین‌جا بشنوید.</div>
     <div className="flex flex-col justify-center items-center">
 <EpisodePlayer />
     </div>

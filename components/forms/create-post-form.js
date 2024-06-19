@@ -139,7 +139,7 @@ export default function CreatePostForm(props) {
             </option>
           ))}
         </select>
-        <label htmlFor="recomType">دسته‌ی پیشنهادها</label>
+        <label htmlFor="recomType">دسته‌ی معرفی دیگران</label>
         <select
           id="recomType"
           name="recomType"
