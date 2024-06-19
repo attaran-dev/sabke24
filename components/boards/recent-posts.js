@@ -1,4 +1,4 @@
-import PostCard from "../post-card/post-card";
+import PostCard from "@/components/cards/post-card/post-card";
 
 export default function RecentPosts(props) {
   const { posts } = props;
