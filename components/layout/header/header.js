@@ -29,22 +29,22 @@ function Header({ fonts }) {
           </Link>
         </div>
         <div className="flex text-xs flex-row-reverse flex-row w-full justify-between items-center">
-          <Link className="hover:bg-gray-100 rounded-md p-1" href="/blog">
+          <Link className="hover:bg-gray-100 hover:rounded-md p-1 border-l-2" href="/blog">
             وبلاگ
           </Link>
-          <Link className="hover:bg-gray-100 rounded-md p-1" href="/radio">
+          <Link className="hover:bg-gray-100 hover:rounded-md p-1 border-l-2" href="/radio">
             رادیو
           </Link>
-          <Link className="hover:bg-gray-100 rounded-md p-1" href="/bookshelf">
+          <Link className="hover:bg-gray-100 hover:rounded-md p-1 border-l-2" href="/bookshelf">
             قفسه
           </Link>
           <Link
-            className="hover:bg-gray-100 rounded-md p-1"
+            className="hover:bg-gray-100 hover:rounded-md p-1 border-l-2"
             href="/recommendations"
           >
             معرفی دیگران
           </Link>
-          <Link className="hover:bg-gray-100 rounded-md p-1" href="/about">
+          <Link className="hover:bg-gray-100 hover:rounded-md p-1" href="/about">
             در مورد این‌جا
           </Link>
         </div>
