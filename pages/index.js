@@ -20,7 +20,7 @@ console.log(generalContext);
   return (
     <Fragment>
     <div className=
-    "[height:100dvh] md:h-screen flex flex-col items-center justify-center  bg-[url('/images/night-sky-2.jpg')] bg-cover bg-center relative" id="first-landing"
+    "overflow-x-hidden [height:100dvh] md:h-screen flex flex-col items-center justify-center  bg-[url('/images/night-sky-2.jpg')] bg-cover bg-center relative" id="first-landing"
     >
       <div className=
       "sm:p-20 md:p-32 lg:p-36 rounded-xl"
@@ -43,7 +43,7 @@ console.log(generalContext);
       </div>
 <Link href={'#radio'} className="absolute bottom-6 left-[49%] text-3xl text-white animate-bounce"><FaAnglesDown className="" /></Link>
     </div>
-    <div  id="radio" className="[height:100dvh] md:h-screen flex flex-col justify-start gap-16 items-center">
+    <div  id="radio" className="overflow-x-hidden [height:100dvh] md:h-screen flex flex-col justify-start gap-16 items-center">
       <div className="flex flex-col text-3xl font-bold mt-8 md:mt-24 text-[#6d5946]">رادیو سبک ۲۴</div>
     
     <div className="flex flex-col items-center justify-evenly flex-1">
