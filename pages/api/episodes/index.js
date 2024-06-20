@@ -57,7 +57,7 @@ export default async function handler(req, res) {
     );
 
     client.close();
-    return res.status(201).json({ message: "اپیسود افزوده شد" });
+    return res.status(201).json({ message: "اپیزود افزوده شد" });
   } catch (error) {
     console.error("Error:", error);
     return res.status(500).json({ message: "مشکلی در سرور پیش آمده است" });

@@ -31,7 +31,7 @@ export default async function handler(req, res) {
         );
 
         res.status(201).json({
-          message: "اپیسود حذف شد",
+          message: "اپیزود حذف شد",
         });
       } else {
         res.status(500).json({
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
       }
     } else {
       res.status(409).json({
-        message: "اپیسودی با این مشخصات یافت نشد",
+        message: "اپیزودی با این مشخصات یافت نشد",
       });
     }
   } else if (req.method === "PUT") {
@@ -92,7 +92,7 @@ export default async function handler(req, res) {
           }
         );
         res.status(201).json({
-          message: "اپیسود تغییر کرد",
+          message: "اپیزود تغییر کرد",
           editedEpisode: editedEpisode,
         });
       } else {
@@ -102,7 +102,7 @@ export default async function handler(req, res) {
       }
     } else {
       res.status(409).json({
-        message: "اپیسودی با این مشخصات یافت نشد",
+        message: "اپیزودی با این مشخصات یافت نشد",
       });
     }
   } else {

@@ -108,7 +108,7 @@ export default function EpisodesList(props) {
                 <tr className="border-2 md:border-4 border-black flex flex-row justify-between p-2 md:p-4 text-sm md:text-base">
                   <th>ردیف</th>
                   <th>اطلاعات مطلب</th>
-                  <th><Link href={"/dashboard/radio/new-episode"} className="rounded p-1 bg-gray-200 hover:bg-gray-300">ایجاد اپیسود جدید</Link></th>
+                  <th><Link href={"/dashboard/radio/new-episode"} className="rounded p-1 bg-gray-200 hover:bg-gray-300">ایجاد اپیزود جدید</Link></th>
                 </tr>
               </thead>
               <tbody className="flex flex-col  ">
@@ -175,7 +175,7 @@ export default function EpisodesList(props) {
 
         {episodeIdToDelete && (
           <div className="text-lg text-center">
-            <p>آیا مطمئنید می‌خواهید این اپیسود را حذف کنید؟</p>
+            <p>آیا مطمئنید می‌خواهید این اپیزود را حذف کنید؟</p>
             <div className="flex justify-center gap-4 my-6">
               <button
                 className="border-2 md:border-4 border-black p-2 font-bold"

@@ -126,7 +126,7 @@ console.log(response);
     <div className="absolute top-24 m-auto inset-x-1/12 md:top-32 md:inset-x-1/4 p-2 md:p-8">
       <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
         <div className="m-auto rounded bg-gray-200 p-1 inline-block">
-          <h1>فرم ایجاد اپیسود جدید</h1>
+          <h1>فرم ایجاد اپیزود جدید</h1>
         </div>
         <label htmlFor="title">
           عنوان<span className="text-red-500 text-3xl font-bold">*</span>
@@ -160,7 +160,7 @@ console.log(response);
           onChange={(e) => setBrief(e.target.value)}
           className="border-4 focus:border-black rounded p-2 my-3"
         />
-        <label htmlFor="file">فایل اپیسود</label>
+        <label htmlFor="file">فایل اپیزود</label>
         <input
           type="file"
           name="file"
@@ -171,7 +171,7 @@ console.log(response);
         />
 
         <button className="my-6 p-1 rounded bg-gray-100 hover:bg-gray-200 w-fit self-center">
-          ثبت اپیسود
+          ثبت اپیزود
         </button>
       </form>
     </div>

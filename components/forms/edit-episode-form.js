@@ -73,7 +73,7 @@ export default function EditEpisodeForm(props){
         !url) && <p>Loading...</p>}
         {title && url && (<form className="flex flex-col gap-3" onSubmit={handleSubmit}>
           <div className="m-auto rounded bg-gray-200 p-1 inline-block">
-            <h1>فرم ایجاد اپیسود جدید</h1>
+            <h1>فرم ایجاد اپیزود جدید</h1>
           </div>
           <label htmlFor="title">
             عنوان<span className="text-red-500 text-3xl font-bold">*</span>
@@ -111,7 +111,7 @@ export default function EditEpisodeForm(props){
 
   
           <button className="my-6 p-1 rounded bg-gray-100 hover:bg-gray-200 w-fit self-center">
-            ثبت اپیسود
+            ثبت اپیزود
           </button>
         </form>)}
       </div>
