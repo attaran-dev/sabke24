@@ -1,5 +1,5 @@
-import { writeFile } from "fs/promises";
-import { join } from "path";
+// import { writeFile } from "fs/promises";
+// import { join } from "path";
 import { connectToDatabase } from "@/utils/db";
 
 export const config = {
@@ -58,11 +58,11 @@ export default async function handler(req, res) {
     const db = client.db();
 
     const bookId = req.query.bookid;
-    const { id, title, url, creationDate, editDate, author, content, brief } =
+    const { id, title, url, creationDate, editDate, author, content, brief, permanentLink } =
       req.body;
-      const bytes = Buffer.from(file, 'base64'); // Convert base64 to buffer
-      const filePath = join(process.cwd(), 'public', 'radio', `${url}.mp3`);
-      await writeFile(filePath, bytes);  
+      // const bytes = Buffer.from(file, 'base64'); // Convert base64 to buffer
+      // const filePath = join(process.cwd(), 'public', 'radio', `${url}.mp3`);
+      // await writeFile(filePath, bytes);  
     const editedBook = {
       id,
       title,
@@ -72,7 +72,7 @@ export default async function handler(req, res) {
       editDate,
       author,
       content,
-      filePath,
+      permanentLink,
     };
     const oldBook = await db.collection("books").findOne({ id: bookId });
 

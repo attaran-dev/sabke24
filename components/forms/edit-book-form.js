@@ -1,8 +1,10 @@
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import PostContentEditor from "../form-parts/post-editor";
+import { S3 } from "aws-sdk";
+import Image from "next/image";
 
 export default function EditBookForm(props) {
   const { totalBooksNum, booksTitles, booksUrls } = props.metaInfo;
@@ -13,18 +15,89 @@ export default function EditBookForm(props) {
   const [file, setFile] = useState("");
       const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
+  const [permanentLink, setPermanentLink] = useState("")
 
   function handleContentChange(newContent) {
     setContent(newContent);
   }
 
-  function handleFileChange(e) {
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      setFile(event.target.result.split(",")[1]); // Extract base64 content
-    };
-    reader.readAsDataURL(e.target.files[0]);
-  }
+  // function handleFileChange(e) {
+  //   const reader = new FileReader();
+  //   reader.onload = (event) => {
+  //     setFile(event.target.result.split(",")[1]); // Extract base64 content
+  //   };
+  //   reader.readAsDataURL(e.target.files[0]);
+  // }
+
+  const ACCESSKEY = "uk30t82t1s5u97k7"; // or process.env.LIARA_ACCESS_KEY;
+  const SECRETKEY = "85c140ae-4864-4e43-8c67-d23701c1b2dc"; //  or process.env.LIARA_SECRET_KEY;
+  const ENDPOINT = "https://storage.iran.liara.space"; //   or process.env.LIARA_ENDPOINT;
+  const BUCKET = "sabke24-files"; //    or process.env.LIARA_BUCKET_NAME;
+
+
+
+
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+  const handleDeleteFile = async (permanentLink) => {
+    try {
+      const s3 = new S3({
+        accessKeyId: ACCESSKEY,
+        secretAccessKey: SECRETKEY,
+        endpoint: ENDPOINT,
+      });
+      const uri = permanentLink;
+const url = new URL(uri);
+const pathname = url.pathname.slice(1);
+const Key = decodeURIComponent(pathname);
+      await s3.deleteObject({ Bucket: BUCKET, Key: Key }).promise();
+
+      console.log('File deleted successfully');
+    } catch (error) {
+      console.error('Error deleting file: ', error);
+    }
+  };
+
+  const handleUpload = async () => {
+    try {
+      await handleDeleteFile(permanentLink);
+      const s3 = new S3({
+        accessKeyId: ACCESSKEY,
+        secretAccessKey: SECRETKEY,
+        endpoint: ENDPOINT,
+      });
+
+      const params = {
+        Bucket: BUCKET,
+        Key: file.name,
+        Body: file,
+      };
+ toast.loading("در حال بارگزاری");
+      const response = await s3.upload(params).promise();
+// console.log(response)
+      // Get permanent link
+      const initialPermanentLink = s3.getSignedUrl('getObject', {
+        Bucket: BUCKET,
+        Key: file.name,
+        Expires: 31536000, // 1 year
+      });
+
+      // setPermanentLink(permanentSignedUrl);
+
+console.log(response);
+  
+setPermanentLink(initialPermanentLink);
+
+
+    } catch (error) {
+      toast.error(error.message);
+      
+    }
+  };
+
+
+
   function checkTitleUniquity(title, oldTitle) {
     const result = booksTitles.find((bookTitle)=>bookTitle===title);
 
@@ -44,11 +117,15 @@ export default function EditBookForm(props) {
     return true;
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    if (file){
+      await handleUpload();
+      toast.remove();
+    }
     const titleUniquity = checkTitleUniquity(title, props.bookInfo.title);
     const urlUniquity = checkUrlUniquity(url, props.bookInfo.url);
-    if (file && title !== "" && url !== "" && titleUniquity && urlUniquity) {
+    if (permanentLink && title !== "" && url !== "" && titleUniquity && urlUniquity) {
         axios.put(`/api/books/${props.bookInfo.id}`, {
             id: props.bookInfo.id,
             title,
@@ -58,12 +135,12 @@ export default function EditBookForm(props) {
             brief,
             author,
             content,
-            file
+            permanentLink
           })
         .then((response) => toast.success(response.data.message))
         .catch((error) => toast.error(error.response.data.message));
       setTimeout(() => {
-        router.replace("/dashboard/bookshelf");
+        router.reload();
       }, 2000);
       return;
     } else if (!titleUniquity) {
@@ -84,7 +161,8 @@ export default function EditBookForm(props) {
     !author && setAuthor(props.bookInfo.author);
     !url && setUrl(props.bookInfo.url);
     !content && setContent(props.bookInfo.content);
-  }, [title, brief, author, url, content, props.bookInfo]);
+    !permanentLink && setPermanentLink(props.bookInfo.permanentLink)
+  }, [title, brief, author, url, content, permanentLink, props.bookInfo]);
   return (
     <div>
               {(!title ||
@@ -148,7 +226,12 @@ export default function EditBookForm(props) {
           name={"content"}
         />
 
-        <label htmlFor="file">تصویر کتاب</label>
+        <div className="flex flex-col gap-2">
+          <div>تصویر فعلی کتاب</div>
+<Image src={permanentLink} alt="" width={100} height={100} />
+        </div>
+
+        <label htmlFor="file">تصویر جدید کتاب</label>
         <input
           type="file"
           name="file"
