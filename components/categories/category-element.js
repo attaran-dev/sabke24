@@ -151,7 +151,7 @@ export default function CategoryElement({ category }) {
         />
       </div>
     );
-  } else if (category === "income-expense") {
+  } else if (category === "income" || category === "expense") {
     return (
       <div id="element" className="relative md:scale-75 lg:scale-100 group">
         <Image

@@ -4,22 +4,26 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 export function categoryFa(category) {
   const categoryFa =
-    category === "income-expense"
-      ? "دخل و خرج"
+    category === "income"
+      ? "مدیریت درآمد"
+      : category === "expense"
+      ? "مدیریت هزینه"
       : category === "hygiene"
-      ? "بهداشت"
+      ? "مدیریت بهداشت"
       : category === "communication"
-      ? "ارتباطات"
+      ? "مدیریت ارتباطات"
       : category === "recreation"
-      ? "تفریح"
+      ? "مدیریت تفریح"
       : category === "nutrition"
-      ? "تغذیه"
+      ? "مدیریت تغذیه"
       : category === "thought"
-      ? "اندیشه"
+      ? "مدیریت اندیشه"
       : category === "sport"
-      ? "ورزش"
+      ? "مدیریت ورزش"
       : category === "prayer"
-      ? "نیایش"
+      ? "مدیریت نیایش"
+      : category === "sleep"
+      ? "مدیریت خواب"
       : null;
 
   return categoryFa;
