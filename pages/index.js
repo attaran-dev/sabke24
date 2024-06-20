@@ -25,31 +25,29 @@ console.log(generalContext);
     <div className=
     "overflow-x-hidden [height:100dvh] md:h-screen flex flex-col items-center justify-center  bg-[url('/images/night-sky-2.jpg')] bg-cover bg-center relative" id="first-landing"
     >
-      <div className=
-      "sm:p-20 md:p-32 lg:p-36 rounded-xl"
-      >
-                 <div className=" flex flex-col items-center gap-10 justify-center p-12 bg-white/25 rounded-xl">
+
+                 <div className=" flex flex-col items-center gap-10 justify-center px-1 py-8 md:px-12 md:py-12 bg-white/25 rounded-xl">
       <h1 className="text-6xl sm:text-9xl font-rubik text-white font-semibold">سبک ۲۴</h1>
 
-      <div className="flex flex-row justify-center gap-6">
-        <Link className="rounded bg-gray-200 p-1 hover:bg-gray-300" href={"/blog"}>
+      <div className="flex flex-row justify-center gap-2 md:gap-6">
+        <Link className="text-xs md:text-base rounded bg-gray-200 p-1 hover:bg-gray-300" href={"/blog"}>
           وبلاگ
         </Link>
-        <Link className="rounded bg-gray-200 p-1 hover:bg-gray-300" href={"#radio"}>
+        <Link className="text-xs md:text-base rounded bg-gray-200 p-1 hover:bg-gray-300" href={"#radio"}>
           رادیو
         </Link>
-        <Link className="rounded bg-gray-200 p-1 hover:bg-gray-300" href={"#bookshelf"}>
+        <Link className="text-xs md:text-base rounded bg-gray-200 p-1 hover:bg-gray-300" href={"#bookshelf"}>
         قفسهٔ کتاب
         </Link>
-        <Link className="rounded bg-gray-200 p-1 hover:bg-gray-300" href={"/recommendations"}>
+        <Link className="text-xs md:text-base rounded bg-gray-200 p-1 hover:bg-gray-300" href={"/recommendations"}>
           معرفی دیگران
         </Link>
-        <Link className="rounded bg-gray-200 p-1 hover:bg-gray-300" href={"/about"}>
+        <Link className="text-xs md:text-base rounded bg-gray-200 p-1 hover:bg-gray-300" href={"/about"}>
           در مورد این‌جا
         </Link>
       </div>
     </div> 
-      </div>
+
 <Link href={'#radio'} className="absolute bottom-6 left-[49%] text-3xl text-white animate-bounce"><FaAnglesDown className="" /></Link>
     </div>
     <div  id="radio" className="overflow-x-hidden [height:100dvh] md:h-screen flex flex-col justify-start gap-16 items-center">
