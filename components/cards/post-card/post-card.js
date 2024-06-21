@@ -13,12 +13,12 @@ function PostCard(props) {
       className=" p-4 rounded-lg border-4 w-24 h-24 sm:w-36 sm:h-36 lg:w-48 lg:h-48 flex items-center justify-center text-center bg-white/75 group"
     >
       {
-        <span className="transition duration-300 text-black/100 text-xs sm:text-md lg:text-lg font-bold lg:group-hover:text-black/0">
+        <span className="transition duration-300 block text-xs sm:text-md lg:text-lg font-bold lg:group-hover:hidden">
           {title}
         </span>
       }
       {
-        <p className="transition duration-300 text-sm absolute text-black/0 lg:group-hover:text-black/100 m-12">
+        <p className="transition duration-300 text-sm hidden lg:group-hover:block m-2">
           {brief}
         </p>
       }
