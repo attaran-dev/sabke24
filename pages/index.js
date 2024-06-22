@@ -51,7 +51,7 @@ console.log(generalContext);
 <Link href={'#radio'} className="absolute bottom-6 left-[49%] text-3xl text-white animate-bounce"><FaAnglesDown className="" /></Link>
     </div>
     <div  id="radio" className="overflow-x-hidden [height:100dvh] md:h-screen flex flex-col justify-start gap-16 items-center">
-      <div className="flex flex-col text-3xl font-bold mt-8 md:mt-24 text-[#6d5946]">رادیو حیات</div>
+      <div className="flex flex-col font-bold mt-8 md:mt-24 rounded text-white text-3xl bg-teal-600 p-3">رادیو حیات</div>
     
     <div className="flex flex-col items-center justify-evenly flex-1">
 <div>آخرین اپیزود رادیو حیات را می‌توانید همین‌جا بشنوید.</div>
@@ -65,7 +65,7 @@ console.log(generalContext);
     </div>
     </div>
     <div id="bookshelf" className="overflow-x-hidden [height:100dvh] md:h-screen flex flex-col gap-16 items-center justify-start">
-    <div className="flex flex-col text-3xl font-bold mt-8 md:mt-24 text-[#6d5946]">قفسهٔ کتاب</div>
+    <div className="flex flex-col font-bold mt-8 md:mt-24 rounded text-white text-3xl bg-teal-600 p-3">قفسهٔ کتاب</div>
     <RecentBooks books={recentBooks} />
     </div>
     </Fragment>
