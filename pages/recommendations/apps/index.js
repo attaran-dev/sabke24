@@ -11,7 +11,7 @@ export default function AppRecom(props) {
           معرفی اپلیکیشن
           </title>
         </Head>
-        <div className="m-auto rounded bg-gray-200 p-1 inline-block">
+        <div className="m-auto rounded text-white text-3xl bg-teal-600 p-3 inline-block">
         <h1>معرفی اپلیکیشن</h1>
         </div>
       <RecentPosts posts={recentPosts} />

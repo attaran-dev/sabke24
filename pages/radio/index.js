@@ -13,7 +13,7 @@ export default function RadioPage(props) {
               رادیو سبک ۲۴
             </title>
           </Head>
-          <div className="m-auto rounded bg-gray-200 p-1 inline-block">
+          <div className="m-auto rounded text-white text-3xl bg-teal-600 p-3 inline-block">
             <h1>رادیو سبک ۲۴</h1>
           </div>
           <div className="flex flex-col md:flex-row md:justify-between">

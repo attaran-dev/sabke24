@@ -3,9 +3,9 @@ import Link from "next/link";
 function PostCategories() {
   return (
     <div
-      className="bg-[url('/images/blue-oil-paint-strokes-textured-background-low-saturation.jpg')] bg-cover bg-center
-    grid grid-cols-2 auto-rows-fr gap-y-16 gap-x-16 p-10
-    md:grid md:grid-cols-5 md:gap-12 md:p-12
+      className="bg-[url('/images/watercolor-gradient-blue-color-background.jpg')] bg-cover bg-center
+    grid grid-cols-2 auto-rows-fr gap-16 p-10
+    md:grid md:grid-cols-5
      "
     >
       <Link

@@ -16,7 +16,7 @@ export default function ContactMe(props) {
       <Head>
         <title>تماس با من</title>
       </Head>
-      <div className="mt-36 mx-auto rounded bg-gray-200 p-1 inline-block">
+      <div className="mt-36 mx-auto rounded text-white text-3xl bg-teal-600 p-3 inline-block">
         <h1>تماس با من</h1>
       </div>
       <div id="content" className="mx-8 mb-12 lg:mx-40 md:mx-20 font-baloo md:text-lg lg:text-2xl text-justify p-4 lg:p-12 bg-white/75 rounded-lg"></div>
