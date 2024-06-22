@@ -24,7 +24,7 @@ function Header({ fonts }) {
     >
       <div className="flex flex-col justify-center items-center py-3 px-6 gap-2 sm:rounded-b-xl w-screen md:w-fit shadow-2xl bg-white">
         <div>
-          <Link className="font-rubik font-bold text-2xl" href="/">
+          <Link className="font-black text-2xl text-teal-800" href="/">
             سبک ۲۴
           </Link>
         </div>

@@ -9,7 +9,7 @@ export default function RecentPosts(props) {
       )}
       {posts.length > 0 && (
         <>
-          <p className="text-center font-bold m-6">مطالب اخیر</p>
+          <p className="text-center font-bold text-teal-800 text-xl m-6">مطالب اخیر</p>
 
           <div className="flex flex-row flex-wrap gap-4 justify-center m-4">
             {posts.map((post) => (

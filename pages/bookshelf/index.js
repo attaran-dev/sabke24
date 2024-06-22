@@ -11,7 +11,7 @@ export default function Bookshelf(props) {
               قفسه کتاب سبک ۲۴
             </title>
           </Head>
-          <div className="m-auto rounded text-white text-3xl bg-teal-600 p-3 inline-block">
+          <div className="m-auto rounded text-white text-3xl font-bold bg-teal-600 p-3 inline-block">
             <h1>قفسهٔ کتاب</h1>
             
           </div>

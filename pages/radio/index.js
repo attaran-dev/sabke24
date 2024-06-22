@@ -10,11 +10,11 @@ export default function RadioPage(props) {
         <div className="my-12 flex flex-col gap-8 content-between">
           <Head>
             <title>
-              رادیو سبک ۲۴
+              رادیو حیات
             </title>
           </Head>
-          <div className="m-auto rounded text-white text-3xl bg-teal-600 p-3 inline-block">
-            <h1>رادیو سبک ۲۴</h1>
+          <div className="m-auto rounded text-white text-3xl font-bold bg-teal-600 p-3 inline-block">
+            <h1>رادیو حیات</h1>
           </div>
           <div className="flex flex-col md:flex-row md:justify-between">
     <RecentEpisodes episodes={recentEpisodes} />

@@ -8,7 +8,7 @@ export default function RecentBooks({books}) {
       )}
       {books.length > 0 && (
         <>
-          <p className="text-center font-bold m-6">کتاب‌های اخیر</p>
+          <p className="text-center font-bold text-teal-800 text-xl m-6">کتاب‌های اخیر</p>
 
           <div className="flex flex-row flex-wrap gap-4 justify-center m-4">
             {books.map((book) => (

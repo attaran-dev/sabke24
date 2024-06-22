@@ -12,7 +12,7 @@ export default function Blog(props) {
           وبلاگ سبک ۲۴
         </title>
       </Head>
-      <div className="m-auto rounded text-white text-3xl bg-teal-600 p-3 inline-block">
+      <div className="m-auto rounded text-white text-3xl font-bold bg-teal-600 p-3 inline-block">
         <h1>وبلاگ</h1>
       </div>
       
