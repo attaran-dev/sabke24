@@ -93,6 +93,20 @@ export default function PagesList(props) {
                           ?"درباره"
                           : type.name==="contact-me"
                           ? "تماس با من"
+                          : type.name==="andishkadeye-armanshahre-manavi"
+                          ? "اندیشکدهٔ آرمانشهر معنوی"
+                          : type.name==="armanshahre-zendegi-pub"
+                          ? "انتشارات آرمانشهر زندگی"
+                          : type.name==="ghebragh-group"
+                          ? "گروه قبراق"
+                          : type.name==="hayate-tayyebe-group"
+                          ? "گروه حیات طیبه"
+                          : type.name==="lezzate-zendegi-group"
+                          ? "گروه لذت زندگی"
+                          : type.name==="exir-app"
+                          ? "گروه اکسیر"
+                          : type.name==="shamime-nabe-zendegi"
+                          ? "مؤسسهٔ شمیم ناب زندگی"
                           : null
                         )
                           : null}
