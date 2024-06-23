@@ -47,13 +47,13 @@ export default function Post(props) {
       <div
         id="container"
         dir="ltr"
-        className="flex flex-row justify-center gap-8 py-6 md:p-[60px_60px_60px_40px]"
+        className="flex flex-row justify-center gap-8 py-6 h-screen md:p-[60px_60px_60px_40px]"
       >
-        <div className="md:flex flex-col hidden gap-8 justify-between items-center">
-        <Menu />
-        <div>
-        <CategoryElement category={post.category} />
-        </div>
+        <div className="relative md:flex flex-col items-center hidden">
+          <Menu />
+          <div className="absolute bottom-0">
+            <CategoryElement category={post.category} />
+          </div>
         </div>
         <div
           dir="rtl"
@@ -68,16 +68,24 @@ export default function Post(props) {
             >
               {post.title}
             </div>
-            <div id="post-meta" className="flex flex-row md:gap-4 md:mx-4 lg:mx-6 my-2 mx-2 gap-2">
-              {!category && <span>loading...</span>}
-              <Link
-                href={`/category/${post.category}`}
-                className=" border rounded p-1 text-xs md:text-sm"
-              >
-                {category}
-              </Link>
+            <div
+              id="post-meta"
+              className="flex flex-row md:gap-4 md:mx-4 lg:mx-6 my-2 mx-2 gap-2"
+            >
+              {category === undefined && <span>loading...</span>}
+              {category && (
+                <Link
+                  href={`/category/${post.category}`}
+                  className=" border rounded p-1 text-xs md:text-sm"
+                >
+                  {category}
+                </Link>
+              )}
+
               {/* <div className=" border rounded p-1">{post.author}</div> */}
-              <div className=" border rounded p-1 text-xs md:text-sm">{creationDate}</div>
+              <div className=" border rounded p-1 text-xs md:text-sm">
+                {creationDate}
+              </div>
             </div>
           </div>
           <hr />
@@ -171,6 +179,6 @@ export async function getServerSideProps(context) {
   return {
     props: {
       post: JSON.parse(JSON.stringify(post)),
-    }
+    },
   };
 }

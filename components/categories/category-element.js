@@ -188,8 +188,8 @@ export default function CategoryElement({ category }) {
         <Image
           alt=""
           src={"/images/tasbih.svg"}
-          width={120}
-          height={120}
+          width={100}
+          height={100}
           className="animate-twiggle
              [user-drag:none] [-webkit-user-drag:none]
             [user-select:none]
