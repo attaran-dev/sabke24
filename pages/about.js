@@ -1,3 +1,4 @@
+import AboutBoard from "@/components/boards/about-board";
 import { connectToDatabase } from "@/utils/db";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -16,10 +17,11 @@ export default function About(props) {
       <Head>
         <title>در مورد سبک ۲۴</title>
       </Head>
-      <div className="mt-36  mx-auto rounded text-white text-3xl font-bold bg-teal-600 p-3 inline-block">
+      <div className="mt-36 mx-auto rounded text-white text-3xl font-bold bg-teal-600 p-3 inline-block">
         <h1>در مورد این‌جا</h1>
       </div>
       <div id="content" className="mx-8 mb-12 lg:mx-40 md:mx-20 font-baloo md:text-lg lg:text-2xl text-justify p-4 lg:p-12 bg-white/75 rounded-lg"></div>
+    <AboutBoard />
     </div>
     </div>
 

@@ -107,6 +107,10 @@ export default function PagesList(props) {
                           ? "گروه اکسیر"
                           : type.name==="shamime-nabe-zendegi"
                           ? "مؤسسهٔ شمیم ناب زندگی"
+                          : type.name==="patoghe-andishe"
+                          ? "گروه پاتوق اندیشه"
+                          : type.name==="hekmat-tour"
+                          ? "گروه بینافرهنگی حکمت تور"
                           : null
                         )
                           : null}
