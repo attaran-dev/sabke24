@@ -19,55 +19,55 @@ export default function AboutBoard(){
 </div>
 <div>سبک ۲۴</div>
 </Link>
-<Link href={'/andishkadeye-armanshahre-manavi'} className="flex flex-col gap-2 justify-between items-center">
+<Link href={'/about/andishkadeye-armanshahre-manavi'} className="flex flex-col gap-2 justify-between items-center">
 <div className="flex-1 flex items-center">
 <Image src="/images/andishkade.png" alt="" width={100} height={100} />
 </div>
 <div>اندیشکدهٔ آرمان‌شهر معنوی</div>
 </Link>
-<Link href={'/armanshahre-zendegi-pub'} className="flex flex-col gap-2 justify-between items-center">
+<Link href={'/about/armanshahre-zendegi-pub'} className="flex flex-col gap-2 justify-between items-center">
 <div className="flex-1 flex items-center">
     <Image src="/images/armanshahre-zendegi-pub.png" alt="" width={100} height={100} />
     </div>
 <div className="justify-self-end">انتشارات آرمان‌شهر زندگی</div>
 </Link>
-<Link href={'/ghebragh-group'} className="flex flex-col gap-2 justify-between items-center">
+<Link href={'/about/ghebragh-group'} className="flex flex-col gap-2 justify-between items-center">
 <div className="flex-1 flex items-center">
 <Image src="/images/ghebragh.png" alt="" width={100} height={100} />
 </div>
 <div>گروه قبراق</div>
 </Link>
-<Link href={'/hayate-tayyebe-group'} className="flex flex-col gap-2 justify-between items-center">
+<Link href={'/about/hayate-tayyebe-group'} className="flex flex-col gap-2 justify-between items-center">
 <div className="flex-1 flex items-center">
 <Image src="/images/hayate-tayyebe.png" alt="" width={100} height={100} />
 </div>
 <div>گروه حیات طیبه</div>
 </Link>
-<Link href={'/lezzate-zendegi-group'} className="flex flex-col gap-2 justify-between items-center">
+<Link href={'/about/lezzate-zendegi-group'} className="flex flex-col gap-2 justify-between items-center">
 <div className="flex-1 flex items-center">
 <Image src="/images/lezzate-zendegi.png" alt="" width={100} height={100} />
 </div>
 <div>گروه لذت زندگی </div>
 </Link>
-<Link href={'/exir-app'} className="flex flex-col gap-2 justify-between items-center">
+<Link href={'/about/exir-app'} className="flex flex-col gap-2 justify-between items-center">
 <div className="flex-1 flex items-center">
     <Image src="/images/exir.png" alt="" width={100} height={100} className="" />
     </div>
 <div className="">اپلیکیشن اکسیر</div>
 </Link>
-<Link href={'/shamime-nabe-zendegi'} className="flex flex-col gap-2 justify-between items-center">
+<Link href={'/about/shamime-nabe-zendegi'} className="flex flex-col gap-2 justify-between items-center">
 <div className="flex-1 flex items-center">
 <Image src="/images/shamim.png" alt="" width={100} height={100} />
 </div>
 <div>مؤسسهٔ شمیم ناب زندگی</div>
 </Link>
-<Link href={'/patoghe-andishe'} className="flex flex-col gap-2 justify-between items-center">
+<Link href={'/about/patoghe-andishe'} className="flex flex-col gap-2 justify-between items-center">
 <div className="flex-1 flex items-center">
     <Image src="/images/patogh.png" alt="" width={100} height={100} className="" />
     </div>
 <div className="">گروه پاتوق اندیشه</div>
 </Link>
-<Link href={'/hekmat-tour'} className="flex flex-col gap-2 justify-between items-center">
+<Link href={'/about/hekmat-tour'} className="flex flex-col gap-2 justify-between items-center">
 <div className="flex-1 flex items-center">
     <Image src="/images/hekmat.png" alt="" width={100} height={100} className="" />
     </div>

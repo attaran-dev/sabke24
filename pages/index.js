@@ -6,6 +6,7 @@ import { Fragment } from "react";
 import { FaAnglesDown } from "react-icons/fa6";
 import { useContext, useEffect } from "react";
 import RecentBooks from "@/components/boards/recent-books";
+import AboutBoard from "@/components/boards/about-board";
 
 export default function Home({lastEpisode, recentBooks}) {
   
@@ -42,8 +43,8 @@ console.log(generalContext);
         <Link className="text-xs md:text-base rounded bg-gray-200 p-1 hover:bg-gray-300" href={"/recommendations"}>
           معرفی دیگران
         </Link>
-        <Link className="text-xs md:text-base rounded bg-gray-200 p-1 hover:bg-gray-300" href={"/about"}>
-          در مورد این‌جا
+        <Link className="text-xs md:text-base rounded bg-gray-200 p-1 hover:bg-gray-300" href={"#about"}>
+          درباره
         </Link>
       </div>
     </div> 
@@ -67,6 +68,10 @@ console.log(generalContext);
     <div id="bookshelf" className="overflow-x-hidden [height:100dvh] md:h-screen flex flex-col gap-16 items-center justify-start">
     <div className="flex flex-col font-bold mt-8 md:mt-24 rounded text-white text-3xl bg-teal-600 p-3">قفسهٔ کتاب</div>
     <RecentBooks books={recentBooks} />
+    </div>
+    <div id="bookshelf" className="overflow-x-hidden [height:100dvh] md:h-screen flex flex-col gap-16 items-center justify-start">
+    <div className="flex flex-col font-bold mt-8 md:mt-24 rounded text-white text-3xl bg-teal-600 p-3">در مورد این‌جا</div>
+    <AboutBoard />
     </div>
     </Fragment>
 
