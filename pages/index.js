@@ -77,9 +77,9 @@ export default function Home({ lastEpisode, recentBooks }) {
       </div>
       <div
         id="radio"
-        className="overflow-x-hidden [height:100dvh] md:h-screen flex flex-col justify-start gap-16 items-center"
+        className="overflow-x-hidden [height:100dvh] md:h-screen flex flex-col justify-between items-center"
       >
-        <div className="flex flex-col font-bold mt-8 md:mt-24 rounded text-white text-3xl bg-teal-600 p-3">
+        <div className="flex flex-col font-bold mt-8 rounded text-white text-3xl bg-teal-600 p-3">
           رادیو حیات
         </div>
 
@@ -106,7 +106,7 @@ export default function Home({ lastEpisode, recentBooks }) {
       </div>
       <div
         id="bookshelf"
-        className="overflow-x-hidden [height:100dvh] md:h-screen flex flex-col items-center justify-between py-4"
+        className="overflow-x-hidden md:h-screen flex flex-col items-center justify-between md:gap-6 py-4"
       >
         <div className="flex flex-col font-bold mt-8 rounded text-white text-3xl bg-teal-600 p-3">
           قفسهٔ کتاب
@@ -121,7 +121,7 @@ export default function Home({ lastEpisode, recentBooks }) {
         className="overflow-x-hidden flex flex-col items-between justify-center"
       >
         <div className="flex flex-col items-center w-fit text-center mx-auto font-bold mt-8 rounded text-white text-3xl justify-center bg-teal-600 p-3">
-          در مورد این‌جا
+درباره
         </div>
         <AboutBoard />
       </div>

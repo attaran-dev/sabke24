@@ -1,3 +1,4 @@
+import AboutBoard from "@/components/boards/about-board";
 import { connectToDatabase } from "@/utils/db";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -20,6 +21,7 @@ export default function ContactMe(props) {
         <h1>تماس با من</h1>
       </div>
       <div id="content" className="mx-8 mb-12 lg:mx-40 md:mx-20 font-baloo md:text-lg lg:text-2xl text-justify p-4 lg:p-12 bg-white/75 rounded-lg"></div>
+      <AboutBoard />
     </div>
     </div>
   );

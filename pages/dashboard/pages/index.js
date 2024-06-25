@@ -97,7 +97,7 @@ export default function PagesList(props) {
                           ? "اندیشکدهٔ آرمانشهر معنوی"
                           : type.name==="armanshahre-zendegi-pub"
                           ? "انتشارات آرمانشهر زندگی"
-                          : type.name==="ghebragh-group"
+                          : type.name==="ghebragh-journal"
                           ? "گروه قبراق"
                           : type.name==="hayate-tayyebe-group"
                           ? "گروه حیات طیبه"

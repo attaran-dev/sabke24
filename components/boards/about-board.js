@@ -8,10 +8,10 @@ export default function AboutBoard(){
     <Image src="/images/contact-me.jpeg" alt="" width={100} height={100} />
 
 </div>
-<div>دربارهٔ من</div>
+<div className="text-xl">دربارهٔ من</div>
 </Link>
 <div className="flex flex-col gap-4 my-12">
-    <div className="text-center text-xl text-teal-800 font-bold">مجموعه‌های تحت نظارت من</div>
+    <div className="text-center text-xl text-teal-800 font-bold">مجموعه‌های من</div>
   <div className="grid grid-cols-2 md:grid-cols-5 gap-y-8 bg-white justify-items-center ">
 <Link href={'/about'} className="flex flex-col gap-2 justify-between items-center">
 <div className="flex-1 flex items-center">
@@ -31,11 +31,11 @@ export default function AboutBoard(){
     </div>
 <div className="justify-self-end">انتشارات آرمان‌شهر زندگی</div>
 </Link>
-<Link href={'/about/ghebragh-group'} className="flex flex-col gap-2 justify-between items-center">
+<Link href={'/about/ghebragh-journal'} className="flex flex-col gap-2 justify-between items-center">
 <div className="flex-1 flex items-center">
 <Image src="/images/ghebragh.png" alt="" width={100} height={100} />
 </div>
-<div>گروه قبراق</div>
+<div>نشریهٔ الکترونیکی قبراق</div>
 </Link>
 <Link href={'/about/hayate-tayyebe-group'} className="flex flex-col gap-2 justify-between items-center">
 <div className="flex-1 flex items-center">

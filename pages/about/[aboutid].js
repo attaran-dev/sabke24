@@ -13,7 +13,7 @@ export function aboutFa(about) {
     ? "اندیشکدهٔ آرمانشهر معنوی"
     : about==="armanshahre-zendegi-pub"
     ? "انتشارات آرمانشهر زندگی"
-    : about==="ghebragh-group"
+    : about==="ghebragh-journal"
     ? "گروه قبراق"
     : about==="hayate-tayyebe-group"
     ? "گروه حیات طیبه"
