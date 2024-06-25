@@ -14,7 +14,7 @@ export function aboutFa(about) {
     : about==="armanshahre-zendegi-pub"
     ? "انتشارات آرمانشهر زندگی"
     : about==="ghebragh-journal"
-    ? "گروه قبراق"
+    ? "نشریهٔ الکترونیکی قبراق"
     : about==="hayate-tayyebe-group"
     ? "گروه حیات طیبه"
     : about==="lezzate-zendegi-group"

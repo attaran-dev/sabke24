@@ -98,7 +98,7 @@ export default function PagesList(props) {
                           : type.name==="armanshahre-zendegi-pub"
                           ? "انتشارات آرمانشهر زندگی"
                           : type.name==="ghebragh-journal"
-                          ? "گروه قبراق"
+                          ? "نشریهٔ الکترونیکی قبراق"
                           : type.name==="hayate-tayyebe-group"
                           ? "گروه حیات طیبه"
                           : type.name==="lezzate-zendegi-group"
