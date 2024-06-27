@@ -1,10 +1,13 @@
 import LoginForm from "@/components/forms/login-form/login-form";
+import Head from "next/head";
 
 function Login() {
   return (
     <div>
-      <h1 className="text-center m-3">ورود و ثبت نام</h1>
-<LoginForm />
+      <Head>
+        <title>ورود</title>
+      </Head>
+      <LoginForm />
     </div>
   );
 }

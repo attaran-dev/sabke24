@@ -1,5 +1,6 @@
 import SignupForm from "@/components/forms/signup-form/signup-form";
 import { useSession } from "next-auth/react";
+import Head from "next/head";
 import { useRouter } from "next/navigation";
 
 export default function Signup() {
@@ -16,7 +17,9 @@ export default function Signup() {
   if (status === "authenticated") {
     return (
       <div>
-        <h1>ثبت نام</h1>
+        <Head>
+          <title>ثبت نام</title>
+        </Head>
         <SignupForm />
       </div>
     );

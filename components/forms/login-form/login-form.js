@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 function LoginForm() {
   const router = useRouter();
@@ -29,7 +30,7 @@ function LoginForm() {
 
   return (
     <form
-      className="flex flex-col border-8 p-8 rounded-2xl lg:w-1/3 md:w-2/3 m-auto gap-4  "
+      className="flex flex-col border-8 p-8 rounded-2xl lg:w-1/3 md:w-2/3 mx-auto gap-4 mt-8 "
       onSubmit={handleSubmit}
     >
       <label htmlFor="email" className="text-right">
@@ -41,7 +42,7 @@ function LoginForm() {
         id="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="border-4 rounded p-2 focus:border-black"
+        className="border-4 border-teal-600 rounded p-2 focus:border-black"
       />
       <label htmlFor="password" className="text-right">
         رمز عبور
@@ -52,9 +53,10 @@ function LoginForm() {
         id="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="border-4 rounded p-2 focus:border-black"
+        className="border-4 border-teal-600 rounded p-2 focus:border-black"
       />
-      <button className="rounded p-4 my-3 bg-gray-200">ورود</button>
+      <button className="bg-teal-600 font-black rounded w-fit mx-auto p-2 text-white my-4">ورود</button>
+      <p className="text-center text-sm">هنوز ثبت نام نکرده‌اید؟ از <Link href={'/signup'} className="underline decoration-teal-600 decoration-4 underline-offset-8 decoration-dotted">اینجا</Link> ثبت نام کنید.</p>
     </form>
   );
 }
