@@ -5,17 +5,17 @@ import nodemailer from "nodemailer";
 
 async function sendActivationLink(userEmail, activationLink) {
   const transporter = nodemailer.createTransport({
-    host: process.env.NEXT_PUBLIC_EMAIL_HOST,
-    port: process.env.NEXT_PUBLIC_EMAIL_PORT,
+    host: process.env.EMAIL_HOST,
+    port: process.env.EMAIL_PORT,
     secure: false,
     auth: {
-      user: process.env.NEXT_PUBLIC_EMAIL_USER,
-      pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
   const mailOptions = {
-    from: process.env.NEXT_PUBLIC_EMAIL_FROM,
+    from: process.env.EMAIL_FROM,
     to: userEmail,
     subject: "فعال‌سازی حساب کاربری",
     html: `
@@ -67,6 +67,11 @@ export default async function helper(req, res) {
           role: "user",
           isActive: false,
           activationToken: token,
+          counsels: [],
+          comments: [],
+          favorites: [],
+          cart: [],
+          tickets: []
         });
         const activationLink = `${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/activate?token=${token}`;
         await sendActivationLink(email, activationLink);

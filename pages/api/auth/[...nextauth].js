@@ -41,7 +41,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 
 // const handler = NextAuth(authOptions);
 // // export { handler as GET, handler as POST };
-export const authOptions ={
+export const authOptions = {
   session: {
     jwt: true,
   },
@@ -66,10 +66,15 @@ export const authOptions ={
           throw new Error("رمز عبور اشتباه است");
         }
         client.close();
-        return { email: user.email };
+        return {
+          name: user.username,
+          email: user.email,
+          isActive: user.isActive,
+          role: user.role,
+        };
       },
     }),
   ],
-  secret: "d06Ntb4hNz7olU7WunHX14ppauvEW6EbBIn8cpap+Cs="
-}
+  secret: "d06Ntb4hNz7olU7WunHX14ppauvEW6EbBIn8cpap+Cs=",
+};
 export default NextAuth(authOptions);

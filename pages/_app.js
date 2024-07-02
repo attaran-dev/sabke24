@@ -1,19 +1,30 @@
 import { SessionProvider } from "next-auth/react";
-import GeneralContext from '../context/GeneralContext'
-import { useState } from "react";
+import GeneralContext from "../context/GeneralContext";
+import { createContext, useState } from "react";
 import "@/styles/globals.css";
 import { Toaster } from "react-hot-toast";
 import RootLayout from "@/components/layout/layout";
 import Head from "next/head";
+import usePersistentContext from "@/context/usePersistentContext";
+import useIsClient from "@/context/useIsClient";
 
 export default function App({ Component, pageProps }) {
-  const [generalContext, setGeneralContext] = useState({
-    playingEpisode: {},
-  theme: "light",
-  })
+  const isClient = useIsClient();
+  const [generalContext, setGeneralContext] = usePersistentContext(
+    "generalContext",
+    {
+      playingEpisode: {},
+      theme: "light",
+    }
+  );
+
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <RootLayout>
-      <GeneralContext.Provider value={{generalContext, setGeneralContext}}>
+      <GeneralContext.Provider value={{ generalContext, setGeneralContext }}>
         <SessionProvider session={pageProps.session}>
           <Head>
             <title>سبک ۲۴</title>

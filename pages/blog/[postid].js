@@ -7,13 +7,23 @@ import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import { categoryFa } from "../category/[categoryid]";
 import { connectToDatabase } from "@/utils/db";
+import GeneralContext from "@/context/GeneralContext";
+import { useContext } from "react";
+import RecentComments from "@/components/boards/recent-comments";
+import { GoComment,GoCommentDiscussion } from "react-icons/go";
+import CreateCommentForm from "@/components/forms/create-comment-form";
 
 export default function Post(props) {
+  const { generalContext } = useContext(GeneralContext);
   const [containerHeight, setContainerHeight] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [post, setPost] = useState({});
   const [creationDate, setCreationDate] = useState("");
   const [category, setCategory] = useState("");
+  const [commentsMenu, setCommentsMenu] = useState("close");
+  const [commentForm, setCommentForm] = useState("close");
+  const {user} = generalContext;
+
 
   useEffect(() => {
     setPost(props.post);
@@ -54,6 +64,12 @@ export default function Post(props) {
           <div className="absolute bottom-0">
             <CategoryElement category={post.category} />
           </div>
+          <div className={`absolute -left-72 bottom-0 h-full w-full ${commentsMenu === "open" ? 'translate-x-72' : null} transition `}>
+            <RecentComments comments={post.comments} />
+          </div>
+          <div className={`absolute -left-72 bottom-0 h-full w-full ${commentForm === "open" ? 'translate-x-72' : null} transition `}>
+            <CreateCommentForm user={user} postid={post.id} />
+          </div>
         </div>
         <div
           dir="rtl"
@@ -68,9 +84,10 @@ export default function Post(props) {
             >
               {post.title}
             </div>
-            <div
+            <div className="flex flex-row my-2  mx-2 md:mx-6 lg:mx-8 justify-between">
+                      <div
               id="post-meta"
-              className="flex flex-row md:gap-4 md:mx-4 lg:mx-6 my-2 mx-2 gap-2"
+              className="flex flex-row md:gap-4  gap-2"
             >
               {category === undefined && <span>loading...</span>}
               {category && (
@@ -87,6 +104,36 @@ export default function Post(props) {
                 {creationDate}
               </div>
             </div>
+            <div className="flex gap-2">
+            <button className="border rounded p-1 text-xs md:text-sm flex gap-2 items-center" onClick={()=>{
+
+              (commentsMenu === 'open' && setCommentsMenu('close'));setCommentForm(`${commentForm === "close" ? "open" : "close"}`)
+            }}>
+                            <span>
+              <GoComment />
+              </span>
+              <span>
+              ثبت نظر
+              </span>
+
+              </button> 
+            <button className="border rounded p-1 text-xs md:text-sm flex gap-2 items-center" onClick={()=>
+            {
+
+              (commentForm === 'open' && setCommentForm('close'));setCommentsMenu(`${commentsMenu === "close" ? "open" : "close"}`) 
+            } }>
+                            <span>
+              <GoCommentDiscussion />
+              </span>
+              <span>
+              نظرات
+              </span>
+
+              </button> 
+            </div>
+ 
+            </div>
+
           </div>
           <hr />
           <div

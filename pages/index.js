@@ -12,8 +12,6 @@ export default function Home({ lastEpisode, recentBooks }) {
   const { generalContext, setGeneralContext } = useContext(GeneralContext);
   useEffect(() => {
     const { id, url, title, brief, permanentLink } = lastEpisode[0];
-    console.log(lastEpisode);
-    console.log(id, url, title, brief, permanentLink);
 
     if (!generalContext.playingEpisode.permanentLink) {
       setGeneralContext({
@@ -21,7 +19,7 @@ export default function Home({ lastEpisode, recentBooks }) {
         playingEpisode: { id, url, title, brief, permanentLink },
       });
     }
-    console.log(generalContext);
+
   });
   return (
     <Fragment>
@@ -33,7 +31,7 @@ export default function Home({ lastEpisode, recentBooks }) {
           <h1 className="text-6xl sm:text-9xl font-rubik text-white font-semibold">
             سبک ۲۴
           </h1>
-<h2 className="font-bold text-white text-xl">روایت تجربهٔ زیستهٔ عطاران طوسی</h2>
+<h2 className="font-bold text-white text-xl">روایت تجربه زیسته عطاران طوسی</h2>
           <div className="flex flex-row justify-center gap-2 md:gap-6">
             <Link
               className="text-xs md:text-base rounded bg-gray-200 p-1 hover:bg-gray-300"
