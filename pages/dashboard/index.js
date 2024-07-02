@@ -9,27 +9,32 @@ import AdminMenu from "@/components/menu/admin-dashboard-menu";
 import UserMenu from "@/components/menu/user-dashboard-menu";
 
 export default function Dashboard({user}) {
-  const { status } = useSession();
+  const { data:session, status } = useSession();
   const { generalContext, setGeneralContext } = useContext(GeneralContext);
   const router = useRouter();
 
   useEffect(()=>{
 
-    if (!generalContext.user) {
+    if (status === "loading") {
+    return <div>در حال احراز هویت ...</div>;
+  }
+  if (status === "unauthenticated") {
+    setGeneralContext({
+      ...generalContext,
+      user: null,
+    });
+   return router.replace("/");
+    
+  }
+
+    if (status === "authenticated" && !generalContext.user) {
       setGeneralContext({
         ...generalContext,
         user: user,
       });
     }
-  }, [generalContext, setGeneralContext, user])
+  }, [generalContext, setGeneralContext,user,status, router])
 
-    if (status === "loading") {
-    return <div>در حال احراز هویت ...</div>;
-  }
-  if (status === "unauthenticated") {
-    router.replace("/");
-    return;
-  }
 
   const {username, email, isActive, role, creationDate, cart, comments, counsels, favorites, tickets} = user;
   return (
@@ -102,9 +107,11 @@ export async function getServerSideProps(context) {
     context.res,
     authOptions
   );
+  console.log(`session: ${session}`)
   const client = await connectToDatabase();
   const db = client.db();
   const user = await db.collection("users").findOne({ email: session?.user.email });
+  console.log(`user: ${user}`)
   client.close();
 
   return {

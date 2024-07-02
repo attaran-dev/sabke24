@@ -22,7 +22,7 @@ function SignupForm() {
       .then((response) => toast.success(response.data.message))
       .catch((error) => toast.error(error.response.data.message));
       setTimeout(() => {
-        router.replace("/dashboard");
+        router.replace("/login");
       }, 2000);
       return
   }
